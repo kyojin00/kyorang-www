@@ -1,25 +1,25 @@
 export default function Services() {
   const services = [
     {
-      tag: 'AI 상담',
-      emoji: '🐾',
+      tag: '익명 상담',
+      emoji: '🐱',
       name: '교랑AI',
       nameEn: 'KYORANG AI',
-      desc: '익명으로 고민을 털어놓으면 교랑이 AI가 따뜻하게 들어드려요. 판단 없이, 언제든지.',
-      features: ['익명 보장', 'GPT-4o 기반', '24시간 응답', '고민 분석'],
+      desc: '말하기 어려운 고민도 교랑이 앞에서는 편하게 꺼낼 수 있어요. 판단 없이, 언제든지, 익명으로.',
+      features: ['완전 익명', '24시간 응답', '고민 기록', '감정 분석'],
       cta: '교랑이에게 털어놓기',
       href: 'https://kyorang.ai.kr',
       color: 'var(--deep-purple)',
       bg: '#EDE8F7',
     },
     {
-      tag: '익명 SNS',
+      tag: '익명 대화',
       emoji: '💬',
       name: '교랑톡',
       nameEn: 'KYORANG TALK',
-      desc: '비슷한 고민을 가진 낯선 누군가와 익명으로 대화해보세요. 말만 해도 한결 가벼워져요.',
+      desc: '비슷한 마음을 가진 누군가와 익명으로 대화해보세요. 말만 해도 한결 가벼워져요.',
       features: ['랜덤 매칭', '완전 익명', '실시간 채팅', '자동 닉네임'],
-      cta: '익명 채팅 시작하기',
+      cta: '익명으로 대화하기',
       href: 'https://talk.kyorang.com',
       color: '#B86A4A',
       bg: '#FAF0E8',
@@ -31,7 +31,8 @@ export default function Services() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm tracking-widest uppercase mb-4 font-medium" style={{ color: 'var(--warm-purple)' }}>Services</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Noto Serif KR', color: 'var(--deep-purple)', lineHeight: 1.4 }}>교랑의 서비스</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Noto Serif KR', color: 'var(--deep-purple)', lineHeight: 1.4 }}>교랑의 공간들</h2>
+          <p className="text-base" style={{ color: 'var(--soft-brown)', fontWeight: 300 }}>고민을 꺼내는 방식은 달라도, 연결된다는 건 같아요.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((s) => (

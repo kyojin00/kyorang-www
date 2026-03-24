@@ -23,7 +23,7 @@ export default function Nav() {
           <a href="#services" className="text-sm" style={{ color: 'var(--soft-brown)' }}>서비스</a>
           <a href="#mission" className="text-sm" style={{ color: 'var(--soft-brown)' }}>미션</a>
           <a href="#contact" className="text-sm" style={{ color: 'var(--soft-brown)' }}>문의</a>
-          <a href="https://kyorang.ai.kr" target="_blank" className="text-sm px-4 py-2 rounded-full transition-all" style={{ background: 'var(--deep-purple)', color: 'white', fontWeight: 500 }}>교랑AI 시작하기</a>
+          <a href="https://kyorang.ai.kr" target="_blank" className="text-sm px-4 py-2 rounded-full transition-all" style={{ background: 'var(--deep-purple)', color: 'white', fontWeight: 500 }}>털어놓으러 가기</a>
         </div>
       </div>
     </nav>
