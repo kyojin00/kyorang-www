@@ -33,7 +33,6 @@ export default function Services() {
           <p className="text-sm tracking-widest uppercase mb-4 font-medium" style={{ color: 'var(--warm-purple)' }}>Services</p>
           <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Noto Serif KR', color: 'var(--deep-purple)', lineHeight: 1.4 }}>교랑의 서비스</h2>
         </div>
-
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((s) => (
             <div key={s.name} className="rounded-3xl p-10 flex flex-col gap-6 transition-transform hover:-translate-y-1" style={{ background: s.bg }}>
@@ -48,13 +47,11 @@ export default function Services() {
                 </div>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--soft-brown)' }}>{s.desc}</p>
               </div>
-
               <div className="flex flex-wrap gap-2">
                 {s.features.map((f) => (
                   <span key={f} className="text-xs px-3 py-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.7)', color: s.color }}>{f}</span>
                 ))}
               </div>
-
               <a href={s.href} target="_blank" className="inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70 mt-auto" style={{ color: s.color }}>{s.cta}</a>
             </div>
           ))}

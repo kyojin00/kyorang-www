@@ -1,10 +1,11 @@
+import Image from 'next/image'
+
 export default function Footer() {
   return (
     <footer className="py-12 px-6 text-center" style={{ background: 'var(--deep-purple)' }}>
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <span className="text-2xl">🐾</span>
-          <span className="text-xl font-bold text-white" style={{ fontFamily: 'Noto Serif KR' }}>교랑</span>
+        <div className="flex justify-center mb-4">
+          <Image src="/logo.png" alt="교랑" width={100} height={36} style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
         </div>
         <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>AI로 연결하는 따뜻한 세상</p>
         <div className="flex justify-center gap-6 mb-8">

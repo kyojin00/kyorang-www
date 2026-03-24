@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden" style={{ background: 'var(--cream)' }}>
@@ -5,7 +7,9 @@ export default function Hero() {
       <div className="absolute bottom-24 left-8 w-48 h-48 rounded-full opacity-15 pointer-events-none" style={{ background: '#F4A88A' }} />
 
       <div className="relative max-w-3xl mx-auto">
-        <p className="text-sm tracking-widest uppercase mb-6 font-medium" style={{ color: 'var(--warm-purple)' }}>KYORANG · 교랑</p>
+        <div className="flex justify-center mb-8">
+          <Image src="/logo.png" alt="교랑" width={160} height={60} style={{ objectFit: 'contain' }} />
+        </div>
         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6" style={{ fontFamily: 'Noto Serif KR', color: 'var(--deep-purple)', lineHeight: 1.3 }}>
           AI로 연결하는<br />따뜻한 세상
         </h1>
