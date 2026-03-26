@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex justify-center gap-6 mb-8">
           <a href="https://kyorang.ai.kr" target="_blank" className="text-sm transition-opacity hover:opacity-100" style={{ color: 'rgba(255,255,255,0.6)' }}>교랑</a>
           <a href="https://talk.kyorang.com" target="_blank" className="text-sm transition-opacity hover:opacity-100" style={{ color: 'rgba(255,255,255,0.6)' }}>교랑톡</a>
-          <a href="mailto:hello@kyorang.com" className="text-sm transition-opacity hover:opacity-100" style={{ color: 'rgba(255,255,255,0.6)' }}>문의</a>
+          <a href="mailto:rywls123450@gmail.com" className="text-sm transition-opacity hover:opacity-100" style={{ color: 'rgba(255,255,255,0.6)' }}>문의</a>
         </div>
         <p className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>© 2025 KYORANG. All rights reserved.</p>
       </div>
