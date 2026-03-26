@@ -10,11 +10,11 @@ export default function Hero() {
         <div className="flex justify-center mb-8">
           <Image src="/logo.png" alt="교랑" width={160} height={60} style={{ objectFit: 'contain' }} />
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6" style={{ fontFamily: 'Noto Serif KR', color: 'var(--deep-purple)', lineHeight: 1.3 }}>
-          털어놓으면<br />가벼워져요
+        <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: 'Noto Serif KR', color: 'var(--deep-purple)', lineHeight: 1.3 }}>
+          말하지 못한 마음을<br />꺼낼 수 있는 곳
         </h1>
         <p className="text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: 'var(--soft-brown)', fontWeight: 300 }}>
-          교랑은 고민을 꺼낼 수 있는 공간을 만들어요.<br />혼자 들고 다니지 않아도 괜찮아요.
+          교랑은 고민을 털어놓을 수 있는 공간을 만들어요.<br />혼자 들고 다니지 않아도 괜찮아요.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a href="https://kyorang.ai.kr" target="_blank" className="px-8 py-4 rounded-full text-white font-medium transition-transform hover:scale-105" style={{ background: 'var(--deep-purple)', fontSize: '0.95rem' }}>교랑이에게 털어놓기</a>

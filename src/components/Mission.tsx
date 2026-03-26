@@ -26,7 +26,7 @@ export default function Mission() {
             혼자 들고 다니지<br />않아도 괜찮아요
           </h2>
           <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: 'var(--soft-brown)', fontWeight: 300 }}>
-            누구에게나 말 못할 고민이 있어요. 교랑은 그 고민을 꺼낼 수 있는 공간을 만드는 팀이에요. 기술은 그 연결을 돕는 도구일 뿐이에요.
+            누구에게나 말 못할 고민이 있어요.<br />교랑은 그 고민을 꺼낼 수 있는 공간을 만드는 팀이에요.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">

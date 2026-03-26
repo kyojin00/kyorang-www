@@ -2,11 +2,11 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '교랑 (KYORANG) - AI로 연결하는 따뜻한 세상',
-  description: '교랑은 AI 기술로 사람들이 더 솔직하게 털어놓고, 더 따뜻하게 연결될 수 있는 세상을 만듭니다.',
+  title: '교랑 (KYORANG) - 말하지 못한 마음을 꺼낼 수 있는 곳',
+  description: '교랑은 고민을 털어놓을 수 있는 공간을 만들어요. 혼자 들고 다니지 않아도 괜찮아요.',
   openGraph: {
     title: '교랑 (KYORANG)',
-    description: 'AI로 연결하는 따뜻한 세상',
+    description: '말하지 못한 마음을 꺼낼 수 있는 곳',
     url: 'https://kyorang.com',
   },
 }

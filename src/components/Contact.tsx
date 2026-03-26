@@ -21,7 +21,7 @@ export default function Contact() {
         </div>
         {sent ? (
           <div className="text-center py-16 rounded-3xl" style={{ background: 'rgba(255,255,255,0.6)' }}>
-            <span className="text-5xl block mb-4">🐾</span>
+            <span className="text-5xl block mb-4">🐱</span>
             <p className="font-medium" style={{ color: 'var(--deep-purple)' }}>메시지를 받았어요!</p>
             <p className="text-sm mt-2" style={{ color: 'var(--soft-brown)' }}>빠른 시일 내에 답변 드릴게요.</p>
           </div>
@@ -39,7 +39,7 @@ export default function Contact() {
               <label className="text-xs font-medium" style={{ color: 'var(--soft-brown)' }}>문의 내용</label>
               <textarea required rows={5} placeholder="어떤 이야기를 나누고 싶으신가요?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="px-4 py-3 rounded-xl text-sm outline-none resize-none" style={{ background: 'var(--cream)', border: '1px solid rgba(124,107,181,0.2)', color: 'var(--text-dark)' }} />
             </div>
-            <button type="submit" className="py-4 rounded-xl font-medium text-white transition-opacity hover:opacity-80" style={{ background: 'var(--deep-purple)' }}>보내기 🐾</button>
+            <button type="submit" className="py-4 rounded-xl font-medium text-white transition-opacity hover:opacity-80" style={{ background: 'var(--deep-purple)' }}>보내기 🐱</button>
           </form>
         )}
         <p className="text-center text-xs mt-6" style={{ color: 'var(--soft-brown)', opacity: 0.7 }}>
