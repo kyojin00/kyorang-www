@@ -45,7 +45,7 @@ export function Contact() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
-                { label: '이메일', value: 'help@kyorang.com' },
+                { label: '이메일', value: 'rywls123450@gmail.com' },
                 { label: '웹사이트', value: 'kyorang.com' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
