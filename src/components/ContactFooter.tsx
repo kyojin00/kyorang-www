@@ -6,12 +6,27 @@ import Image from 'next/image'
 export function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 3000)
-    setForm({ name: '', email: '', message: '' })
+    setLoading(true)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error()
+      setSent(true)
+      setForm({ name: '', email: '', message: '' })
+      setTimeout(() => setSent(false), 4000)
+    } catch {
+      alert('메일 발송 중 오류가 발생했어요. 다시 시도해주세요.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputStyle = {
@@ -92,13 +107,14 @@ export function Contact() {
                   <label style={{ fontSize: '12px', fontWeight: 500, color: 'var(--text-mid)', display: 'block', marginBottom: '6px' }}>메시지</label>
                   <textarea value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} placeholder="문의 내용을 입력해주세요" required rows={5} style={{ ...inputStyle, resize: 'none' }} />
                 </div>
-                <button type="submit" className="btn-hover" style={{
+                <button type="submit" disabled={loading} style={{
                   padding: '16px', borderRadius: '16px', border: 'none',
                   background: 'linear-gradient(135deg, var(--warm-purple), var(--deep-purple))',
-                  color: 'white', fontWeight: 700, fontSize: '15px', cursor: 'pointer',
+                  color: 'white', fontWeight: 700, fontSize: '15px', cursor: loading ? 'not-allowed' : 'pointer',
                   boxShadow: '0 4px 16px rgba(61,46,107,0.3)', fontFamily: 'inherit',
+                  opacity: loading ? 0.7 : 1,
                 }}>
-                  보내기
+                  {loading ? '발송 중...' : '보내기'}
                 </button>
               </form>
             )}
