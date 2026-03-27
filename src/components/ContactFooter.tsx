@@ -61,7 +61,7 @@ export function Contact() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
                     style={{ backgroundColor: 'var(--peach)', color: 'var(--warm-purple)' }}
                   >
                     {item.icon}
@@ -150,7 +150,7 @@ export function Contact() {
 export function Footer() {
   return (
     <footer style={{ backgroundColor: 'var(--deep-purple)' }} className="py-12 relative overflow-hidden">
-      <div className="absolute top-0 right-[-60px] w-48 h-48 rounded-full opacity-10" style={{ backgroundColor: 'var(--warm-purple)' }} />
+      <div className="absolute top-0 -right-15 w-48 h-48 rounded-full opacity-10" style={{ backgroundColor: 'var(--warm-purple)' }} />
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
