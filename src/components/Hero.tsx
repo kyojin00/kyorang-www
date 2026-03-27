@@ -2,29 +2,145 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden" style={{ background: 'var(--cream)' }}>
-      <div className="absolute top-32 right-16 w-72 h-72 rounded-full opacity-20 pointer-events-none" style={{ background: 'var(--warm-purple)' }} />
-      <div className="absolute bottom-24 left-8 w-48 h-48 rounded-full opacity-15 pointer-events-none" style={{ background: '#F4A88A' }} />
+    <section
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{ backgroundColor: 'var(--cream)' }}
+    >
+      {/* 배경 그라데이션 블롭 */}
+      <div
+        className="absolute top-[-10%] right-[-15%] w-[600px] h-[600px] rounded-full opacity-25 blur-3xl"
+        style={{ backgroundColor: 'var(--warm-purple)' }}
+      />
+      <div
+        className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full opacity-15 blur-3xl"
+        style={{ backgroundColor: 'var(--pink)' }}
+      />
+      <div
+        className="absolute top-[30%] left-[40%] w-[300px] h-[300px] rounded-full opacity-10 blur-3xl"
+        style={{ backgroundColor: '#F9A8C9' }}
+      />
 
-      <div className="relative max-w-3xl mx-auto">
-        <div className="flex justify-center mb-8">
-          <Image src="/logo.png" alt="교랑" width={160} height={60} style={{ objectFit: 'contain' }} />
+      <div className="max-w-6xl mx-auto px-6 pt-24 pb-16 grid md:grid-cols-2 gap-12 items-center w-full">
+
+        {/* 텍스트 */}
+        <div>
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 animate-fade-up"
+            style={{
+              backgroundColor: 'rgba(124,107,181,0.1)',
+              color: 'var(--warm-purple)',
+              animationDelay: '0.1s',
+              opacity: 0,
+            }}
+          >
+            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--warm-purple)' }} />
+            교랑 플랫폼
+          </div>
+
+          <h1
+            className="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 animate-fade-up"
+            style={{ color: 'var(--text-dark)', animationDelay: '0.2s', opacity: 0 }}
+          >
+            말하지 못한<br />
+            <span style={{ color: 'var(--deep-purple)' }}>마음을</span><br />
+            꺼낼 수 있는 곳
+          </h1>
+
+          <p
+            className="text-lg leading-relaxed mb-10 animate-fade-up"
+            style={{ color: 'var(--text-mid)', animationDelay: '0.35s', opacity: 0, maxWidth: '420px' }}
+          >
+            교랑은 AI 상담부터 소통, 그리고 일상의 작은 즐거움까지
+            함께하는 감성 플랫폼이에요.
+          </p>
+
+          <div
+            className="flex flex-wrap gap-3 animate-fade-up"
+            style={{ animationDelay: '0.5s', opacity: 0 }}
+          >
+            <a
+              href="https://kyorang.ai.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3.5 rounded-full text-white font-medium transition-all hover:opacity-90 hover:shadow-xl"
+              style={{
+                background: 'linear-gradient(135deg, var(--warm-purple), var(--deep-purple))',
+                boxShadow: '0 4px 20px rgba(61,46,107,0.3)',
+              }}
+            >
+              교랑AI 시작하기
+            </a>
+            <a
+              href="https://shop.kyorang.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3.5 rounded-full font-medium transition-all hover:shadow-md"
+              style={{
+                backgroundColor: 'white',
+                color: 'var(--text-dark)',
+                border: '1.5px solid var(--peach)',
+                boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+              }}
+            >
+              교랑샵 구경하기
+            </a>
+          </div>
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: 'Noto Serif KR', color: 'var(--deep-purple)', lineHeight: 1.3 }}>
-          말하지 못한 마음을<br />꺼낼 수 있는 곳
-        </h1>
-        <p className="text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: 'var(--soft-brown)', fontWeight: 300 }}>
-          교랑은 고민을 털어놓을 수 있는 공간을 만들어요.<br />혼자 들고 다니지 않아도 괜찮아요.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a href="https://kyorang.ai.kr" target="_blank" className="px-8 py-4 rounded-full text-white font-medium transition-transform hover:scale-105" style={{ background: 'var(--deep-purple)', fontSize: '0.95rem' }}>교랑이에게 털어놓기</a>
-          <a href="#services" className="px-8 py-4 rounded-full font-medium transition-all hover:scale-105" style={{ background: 'var(--peach)', color: 'var(--deep-purple)', fontSize: '0.95rem' }}>서비스 살펴보기</a>
+
+        {/* 로고 + 플로팅 카드 */}
+        <div className="relative flex items-center justify-center h-[420px]">
+          {/* 중앙 로고 */}
+          <div className="animate-float relative z-10">
+            <div
+              className="w-52 h-52 rounded-full flex items-center justify-center"
+              style={{
+                background: 'linear-gradient(135deg, var(--peach), var(--pink-light))',
+                boxShadow: '0 24px 64px rgba(124,107,181,0.25)',
+              }}
+            >
+              <Image src="/logo.png" alt="교랑" width={120} height={120} priority />
+            </div>
+          </div>
+
+          {/* 플로팅 서비스 카드들 */}
+          <div
+            className="absolute top-8 left-0 bg-white rounded-2xl px-4 py-3 shadow-lg animate-fade-up"
+            style={{ animationDelay: '0.6s', opacity: 0, boxShadow: '0 8px 24px rgba(61,46,107,0.12)' }}
+          >
+            <p className="text-xs font-bold" style={{ color: 'var(--deep-purple)' }}>교랑AI</p>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--text-light)' }}>AI 익명 상담</p>
+          </div>
+
+          <div
+            className="absolute top-12 right-0 bg-white rounded-2xl px-4 py-3 shadow-lg animate-fade-up"
+            style={{ animationDelay: '0.75s', opacity: 0, boxShadow: '0 8px 24px rgba(232,98,154,0.15)' }}
+          >
+            <p className="text-xs font-bold" style={{ color: 'var(--pink)' }}>교랑샵</p>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--text-light)' }}>캐릭터 소품샵</p>
+          </div>
+
+          <div
+            className="absolute bottom-16 left-4 bg-white rounded-2xl px-4 py-3 shadow-lg animate-fade-up"
+            style={{ animationDelay: '0.9s', opacity: 0, boxShadow: '0 8px 24px rgba(124,107,181,0.12)' }}
+          >
+            <p className="text-xs font-bold" style={{ color: 'var(--warm-purple)' }}>교랑톡</p>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--text-light)' }}>익명 채팅 SNS</p>
+          </div>
+
+          {/* 배경 원형 장식 */}
+          <div
+            className="absolute inset-0 rounded-full opacity-5"
+            style={{ background: 'radial-gradient(circle, var(--warm-purple), transparent 70%)' }}
+          />
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-xs" style={{ color: 'var(--soft-brown)' }}>scroll</span>
-        <div className="w-px h-10 animate-pulse" style={{ background: 'var(--warm-purple)' }} />
+      {/* 스크롤 인디케이터 */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-up" style={{ animationDelay: '1.2s', opacity: 0 }}>
+        <p className="text-xs" style={{ color: 'var(--text-light)' }}>스크롤</p>
+        <svg width="16" height="16" fill="none" stroke="var(--text-light)" strokeWidth="2" viewBox="0 0 24 24" className="animate-bounce">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
       </div>
     </section>
   )
