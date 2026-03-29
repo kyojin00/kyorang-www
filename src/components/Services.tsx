@@ -1,7 +1,7 @@
 export default function Services() {
   const services = [
     {
-      name: '교랑AI',
+      name: '교랑이',
       tag: '교랑이에게 털어놓으세요',
       url: 'https://kyorang.ai.kr',
       desc: '말하기 어려운 고민을 교랑이에게 털어놓으세요. 익명으로 안전하게, 교랑이가 진심 어린 답변을 드려요.',
