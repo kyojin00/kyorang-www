@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'KYORANG - 말하지 못한 마음을 꺼낼 수 있는 곳',
-  description: '교랑은 AI 상담부터 소통, 쇼핑까지 함께하는 감성 플랫폼이에요.',
+  title: '교랑 (KYORANG) - 말하지 못한 마음을 꺼낼 수 있는 곳',
+  description: '교랑은 상담부터 소통, 쇼핑까지 함께하는 감성 플랫폼이에요.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
