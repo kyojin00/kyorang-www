@@ -13,6 +13,19 @@ export default function Services() {
       btnBg: 'rgba(255,255,255,0.18)', btnColor: 'white', btnBorder: 'rgba(255,255,255,0.3)',
     },
     {
+      name: '교랑 스토리',
+      tag: '일상을 나눠요',
+      url: 'https://kyorangstory.com',
+      desc: '익명으로 감정을 기록하고, 피드에서 일상을 공유해요. 나만의 감정 다이어리부터 SNS까지 하나의 공간에서.',
+      features: ['익명 피드', 'SNS 피드', '감정 다이어리'],
+      bg: 'linear-gradient(135deg, #E3F2FD 0%, #C5E1F5 100%)',
+      tagColor: '#2271A8', tagBg: 'rgba(34,113,168,0.12)',
+      nameColor: 'var(--text-dark)', descColor: 'var(--text-mid)',
+      fBg: 'rgba(34,113,168,0.08)', fColor: 'var(--text-mid)',
+      btnBg: '#2271A8', btnColor: 'white', btnBorder: 'transparent',
+      badge: 'NEW',
+    },
+    {
       name: '교랑톡',
       tag: '교랑이와 친구들',
       url: 'https://talk.kyorang.com',
@@ -35,7 +48,6 @@ export default function Services() {
       nameColor: 'var(--text-dark)', descColor: 'var(--text-mid)',
       fBg: 'rgba(232,98,154,0.08)', fColor: 'var(--text-mid)',
       btnBg: 'var(--pink)', btnColor: 'white', btnBorder: 'transparent',
-      badge: 'NEW',
     },
   ]
 
@@ -59,8 +71,8 @@ export default function Services() {
           </p>
         </div>
 
-        {/* 카드 그리드 */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+        {/* 카드 그리드 — 2×2 */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
           {services.map(s => (
             <div key={s.name} className="service-card" style={{
               borderRadius: '24px', padding: '32px',

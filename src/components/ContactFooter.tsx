@@ -142,6 +142,7 @@ export function Footer() {
           <div style={{ display: 'flex', gap: '24px' }}>
             {[
               { label: '교랑AI', href: 'https://kyorang.ai.kr' },
+              { label: '교랑 스토리', href: 'https://kyorangstory.com' },
               { label: '교랑톡', href: 'https://talk.kyorang.com' },
               { label: '교랑샵', href: 'https://shop.kyorang.com' },
             ].map(item => (
