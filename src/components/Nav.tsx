@@ -84,8 +84,7 @@ export default function Nav() {
               { label: '교랑AI', href: 'https://kyorang.ai.kr' },
               { label: '교랑 스토리', href: 'https://story.kyorang.com' },
               { label: '교랑톡', href: 'https://talk.kyorang.com' },
-              { label: '교랑샵', href: 'https://shop.kyorang.com' },
-            ].map(item => (
+              ].map(item => (
               <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className="nav-link">
                 {item.label}
               </a>

@@ -41,7 +41,6 @@ const heroStyles = `
   .hero-badge{ animation: fade-up 0.7s 0.6s both; }
   .logo-float{ animation: float-slow 5s ease-in-out infinite; }
   .card-a    { animation: float-card-a 4.5s ease-in-out infinite; }
-  .card-b    { animation: float-card-b 5.5s ease-in-out 0.8s infinite; }
   .card-c    { animation: float-card-c 4s ease-in-out 0.4s infinite; }
   .blob-1    { animation: blob-move 9s ease-in-out infinite; }
   .blob-2    { animation: blob-move 11s ease-in-out infinite reverse; }
@@ -77,7 +76,6 @@ const heroStyles = `
 export default function Hero() {
   const statChips = [
     { icon: '💬', label: '익명 상담', sub: '24/7' },
-    { icon: '🛍️', label: '교랑샵', sub: '캐릭터 굿즈' },
     { icon: '📖', label: '교랑 스토리', sub: '감정 다이어리' },
   ]
 
@@ -157,9 +155,6 @@ export default function Hero() {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <a href="https://shop.kyorang.com" target="_blank" rel="noopener noreferrer" className="cta-secondary">
-              교랑샵 구경하기
-            </a>
           </div>
 
           <div className="hero-badge" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
@@ -216,21 +211,6 @@ export default function Hero() {
                 <div key={i} style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--warm-purple)', opacity: op }} />
               ))}
             </div>
-          </div>
-
-          <div className="card-b" style={{
-            position: 'absolute', top: '56px', right: '-20px', zIndex: 3,
-            background: 'white', borderRadius: '18px', padding: '14px 18px',
-            boxShadow: '0 12px 40px rgba(232,98,154,0.16)',
-            border: '1px solid rgba(232,98,154,0.08)', minWidth: '120px',
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-              <div style={{ width: '28px', height: '28px', borderRadius: '8px', background: 'linear-gradient(135deg, #FFB3C8, #FF6B9D)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontSize: '14px' }}>🛍️</span>
-              </div>
-              <p style={{ fontSize: '12px', fontWeight: 700, color: 'var(--pink)' }}>교랑샵</p>
-            </div>
-            <p style={{ fontSize: '11px', color: 'var(--text-light)' }}>캐릭터 소품샵</p>
           </div>
 
           <div className="card-c" style={{

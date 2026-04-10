@@ -45,20 +45,6 @@ export default function Services() {
       fBg: 'rgba(61,46,107,0.07)', fColor: 'var(--text-mid)',
       btnStyle: { background: 'var(--deep-purple)', color: 'white', border: 'none' },
     },
-    {
-      name: '교랑샵',
-      tag: '캐릭터 굿즈',
-      url: 'https://shop.kyorang.com',
-      desc: '교랑이 캐릭터를 담은 귀여운 소품들을 만나보세요. 문구, 키링, 엽서 등 다양한 굿즈가 준비되어 있어요.',
-      features: ['캐릭터 굿즈', '소품/문구', '빠른 배송'],
-      emoji: '🛍️',
-      bg: 'linear-gradient(150deg, #FFF0F5 0%, #FFD6E5 100%)',
-      orb: 'rgba(232,98,154,0.3)',
-      tagColor: 'var(--pink)', tagBg: 'rgba(232,98,154,0.1)',
-      nameColor: 'var(--text-dark)', descColor: 'var(--text-mid)',
-      fBg: 'rgba(232,98,154,0.08)', fColor: 'var(--text-mid)',
-      btnStyle: { background: 'var(--pink)', color: 'white', border: 'none' },
-    },
   ]
 
   return (
@@ -120,7 +106,7 @@ export default function Services() {
           </div>
 
           {/* 2×2 카드 그리드 */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
             {services.map(s => (
               <div key={s.name} className="service-card-wrap" style={{ background: s.bg }}>
                 {/* 배경 오브 */}
