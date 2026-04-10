@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react'
+
 export default function Services() {
   const services = [
     {
@@ -171,7 +173,7 @@ export default function Services() {
                   ))}
                 </div>
 
-                <a href={s.url} target="_blank" rel="noopener noreferrer" className="service-btn" style={s.btnStyle as React.CSSProperties}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" className="service-btn" style={s.btnStyle as CSSProperties}>
                   바로가기
                   <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
