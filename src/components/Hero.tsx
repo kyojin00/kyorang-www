@@ -75,7 +75,6 @@ const heroStyles = `
 
 export default function Hero() {
   const statChips = [
-    { icon: '💬', label: '익명 상담', sub: '24/7' },
     { icon: '📖', label: '교랑 스토리', sub: '감정 다이어리' },
   ]
 
@@ -142,20 +141,24 @@ export default function Hero() {
 
           <p className="hero-p" style={{
             fontSize: '17px', lineHeight: 1.9, color: 'var(--text-mid)',
-            maxWidth: '400px', marginBottom: '44px',
+            maxWidth: '400px', marginBottom: '36px',
           }}>
             교랑이와 함께하는 상담부터 소통,<br />
             그리고 일상의 작은 즐거움까지.
           </p>
 
           <div className="hero-cta" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
-            <a href="https://kyorang.ai.kr" target="_blank" rel="noopener noreferrer" className="cta-primary">
-              교랑이에게 털어놓기
+            <a href="https://story.kyorang.com" target="_blank" rel="noopener noreferrer" className="cta-primary">
+              교랑 스토리 시작하기
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
+            <a href="https://talk.kyorang.com" target="_blank" rel="noopener noreferrer" className="cta-secondary">
+              교랑톡 둘러보기
+            </a>
           </div>
+
 
           <div className="hero-badge" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             {statChips.map((s, i) => (
@@ -190,26 +193,6 @@ export default function Hero() {
               boxShadow: '0 32px 80px rgba(124,107,181,0.3), 0 8px 24px rgba(61,46,107,0.15)',
             }}>
               <Image src="/logo.png" alt="교랑" width={96} height={96} priority />
-            </div>
-          </div>
-
-          <div className="card-a" style={{
-            position: 'absolute', top: '40px', left: '-10px', zIndex: 3,
-            background: 'white', borderRadius: '18px', padding: '14px 18px',
-            boxShadow: '0 12px 40px rgba(61,46,107,0.14)',
-            border: '1px solid rgba(124,107,181,0.08)', minWidth: '130px',
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-              <div style={{ width: '28px', height: '28px', borderRadius: '8px', background: 'linear-gradient(135deg, #3D2E6B, #7C6BB5)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontSize: '14px' }}>🤍</span>
-              </div>
-              <p style={{ fontSize: '12px', fontWeight: 700, color: 'var(--deep-purple)' }}>교랑이</p>
-            </div>
-            <p style={{ fontSize: '11px', color: 'var(--text-light)', lineHeight: 1.5 }}>고민 상담 중이에요</p>
-            <div style={{ display: 'flex', gap: '3px', marginTop: '8px' }}>
-              {[0.4, 0.6, 0.8].map((op, i) => (
-                <div key={i} style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--warm-purple)', opacity: op }} />
-              ))}
             </div>
           </div>
 

@@ -2,20 +2,7 @@ import type { CSSProperties } from 'react'
 
 export default function Services() {
   const services = [
-    {
-      name: '교랑이',
-      tag: 'AI 상담',
-      url: 'https://kyorang.ai.kr',
-      desc: '말하기 어려운 고민을 교랑이에게 털어놓으세요. 익명으로 안전하게, 교랑이가 진심 어린 답변을 드려요.',
-      features: ['완전 익명', '교랑이 상담', '24시간 운영'],
-      emoji: '🤍',
-      bg: 'linear-gradient(150deg, #2D1F58 0%, #4A3490 60%, #6B52B0 100%)',
-      orb: 'rgba(124,107,181,0.5)',
-      tagColor: 'rgba(255,255,255,0.7)', tagBg: 'rgba(255,255,255,0.12)',
-      nameColor: 'white', descColor: 'rgba(255,255,255,0.65)',
-      fBg: 'rgba(255,255,255,0.1)', fColor: 'rgba(255,255,255,0.75)',
-      btnStyle: { background: 'rgba(255,255,255,0.15)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)' },
-    },
+
     {
       name: '교랑 스토리',
       tag: '감정 일기 · SNS',
@@ -106,7 +93,7 @@ export default function Services() {
           </div>
 
           {/* 2×2 카드 그리드 */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
             {services.map(s => (
               <div key={s.name} className="service-card-wrap" style={{ background: s.bg }}>
                 {/* 배경 오브 */}

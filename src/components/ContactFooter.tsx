@@ -142,7 +142,6 @@ export function Contact() {
                 <p style={{ fontSize: '12px', color: 'var(--text-light)', marginBottom: '12px', letterSpacing: '0.04em' }}>서비스 바로가기</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {[
-                    { label: '교랑AI', href: 'https://kyorang.ai.kr', color: 'var(--deep-purple)' },
                     { label: '교랑 스토리', href: 'https://story.kyorang.com', color: '#2271A8' },
                     { label: '교랑톡', href: 'https://talk.kyorang.com', color: 'var(--warm-purple)' },
                   ].map(s => (
@@ -249,7 +248,6 @@ export function Footer() {
             <p style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', marginBottom: '16px' }}>서비스</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
-                { label: '교랑AI', href: 'https://kyorang.ai.kr' },
                 { label: '교랑 스토리', href: 'https://story.kyorang.com' },
                 { label: '교랑톡', href: 'https://talk.kyorang.com' },
                 ].map(item => (

@@ -81,8 +81,7 @@ export default function Nav() {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
             {[
-              { label: '교랑AI', href: 'https://kyorang.ai.kr' },
-              { label: '교랑 스토리', href: 'https://story.kyorang.com' },
+                { label: '교랑 스토리', href: 'https://story.kyorang.com' },
               { label: '교랑톡', href: 'https://talk.kyorang.com' },
               ].map(item => (
               <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className="nav-link">
