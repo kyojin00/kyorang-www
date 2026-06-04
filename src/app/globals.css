@@ -261,9 +261,59 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 @keyframes ctaGlow{0%,100%{box-shadow:0 6px 18px rgba(36,27,67,.22)}50%{box-shadow:0 8px 28px rgba(138,120,199,.6)}}
 
 @media(prefers-reduced-motion:reduce){
-  .aurora span,.phone-ring,.btn-primary::before,.nav-cta::before,.nav-cta{animation:none!important;}
+  .aurora span,.phone-ring,.btn-primary::before,.nav-cta::before,.nav-cta,.ph-face.mood,.ph-face.talk{animation:none!important;}
   .particle-field{display:none;}
 }
+
+/* 폰 화면 교차 전환 (교랑무드 ↔ 교랑톡) */
+.phone-screen{position:relative;}
+.ph-face{position:absolute;inset:0;display:flex;flex-direction:column;}
+.ph-face.mood{opacity:1;animation:faceMood 11s ease-in-out infinite;}
+.ph-face.talk{opacity:0;animation:faceTalk 11s ease-in-out infinite;}
+@keyframes faceMood{0%{opacity:1}44%{opacity:1}50%{opacity:0}94%{opacity:0}100%{opacity:1}}
+@keyframes faceTalk{0%{opacity:0}44%{opacity:0}50%{opacity:1}94%{opacity:1}100%{opacity:0}}
+
+/* ── 교랑무드 화면 (무디 카드) ── */
+.ph-face.mood{background:#07060F;}
+.md-top{position:relative;display:flex;justify-content:center;padding:18px 0 10px;}
+.md-cat{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.4);}
+.md-more{position:absolute;right:16px;top:26px;color:rgba(255,255,255,.4);}
+.md-date{align-self:center;font-size:10.5px;color:rgba(255,255,255,.62);background:rgba(255,255,255,.08);padding:5px 13px;border-radius:999px;margin:0 auto 12px;}
+.md-card{flex:1;margin:0 12px 8px;padding:22px 17px;border-radius:18px;background:linear-gradient(180deg,#FFFBF4,#F7EFE2);box-shadow:0 10px 30px rgba(0,0,0,.35);}
+.md-greet{font-size:11.5px;font-style:italic;color:#9A8F86;line-height:1.65;margin-bottom:18px;}
+.md-user{font-size:14.5px;font-weight:800;color:#2E2733;margin-bottom:18px;}
+.md-reply{font-size:11.5px;font-style:italic;color:#9A8F86;line-height:1.65;margin-bottom:18px;}
+.md-faint{font-size:11px;font-style:italic;color:#C7BDB1;}
+.md-dots{display:flex;justify-content:center;gap:5px;padding-bottom:14px;}
+.md-dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.22);}
+.md-dots i.on{width:15px;border-radius:3px;background:#8A78C7;}
+
+/* ── 교랑톡 화면 (친구 목록) ── */
+.ph-face.talk{background:#0A0912;}
+.tk-head{display:flex;align-items:center;justify-content:space-between;padding:16px 14px 12px;}
+.tk-title{font-size:19px;font-weight:800;color:#fff;}
+.tk-title b{font-size:12px;color:#9D8BD6;margin-left:7px;font-weight:700;}
+.tk-icons{display:flex;gap:7px;}
+.tk-icons span{width:25px;height:25px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);}
+.tk-icons .ico{width:14px;height:14px;}
+.tk-me{display:flex;align-items:center;gap:10px;margin:0 12px 11px;padding:11px;border-radius:14px;background:rgba(124,107,181,.08);border:1px solid rgba(124,107,181,.18);}
+.tk-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#9B6BE8,#7C3AED);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0;}
+.tk-av.lg{width:40px;height:40px;font-size:15px;}
+.tk-name{font-size:12.5px;font-weight:700;color:#fff;}
+.tk-name em{font-style:normal;font-size:8.5px;background:rgba(124,107,181,.32);color:#CFC2FF;padding:1px 5px;border-radius:4px;margin-left:5px;vertical-align:middle;}
+.tk-status{font-size:10px;color:rgba(255,255,255,.4);margin-top:2px;}
+.tk-chev{margin-left:auto;color:rgba(255,255,255,.3);font-size:15px;}
+.tk-search{margin:0 12px 14px;display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:11px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.34);font-size:11px;}
+.tk-search .ico{width:13px;height:13px;}
+.tk-sec{padding:0 16px;font-size:10.5px;color:rgba(255,255,255,.46);font-weight:600;margin-bottom:6px;}
+.tk-row{display:flex;align-items:center;gap:11px;padding:8px 14px;}
+.tk-rname{font-size:12.5px;font-weight:600;color:#EDEAF5;}
+.tk-chat{margin-left:auto;width:30px;height:30px;border-radius:8px;background:rgba(124,58,237,.16);display:flex;align-items:center;justify-content:center;color:#9D8BD6;}
+.tk-chat .ico{width:16px;height:16px;}
+.tk-tabbar{margin-top:auto;display:flex;justify-content:space-around;padding:10px 0 16px;border-top:1px solid rgba(255,255,255,.06);}
+.tk-tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:8.5px;color:rgba(255,255,255,.4);}
+.tk-tab .ico{width:18px;height:18px;}
+.tk-tab.on{color:#9D8BD6;}
 
 /* ===== reveal ===== */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}

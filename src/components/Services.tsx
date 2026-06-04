@@ -20,9 +20,9 @@ type Service = {
 const services: Service[] = [
   {
     name: '교랑톡',
-    tag: '메신저',
-    desc: '교랑이와 함께하는 공간에서 새로운 친구를 만나고 대화해요. 부담 없이 연결되는 따뜻한 소통 공간이에요.',
-    chips: ['닉네임 사용', '1:1 채팅', '오픈채팅'],
+    tag: '소셜 · SNS',
+    desc: '피드로 일상을 나누고, 친구와 메시지로 이어지는 소셜 공간. 사람과 사람을 가볍고 따뜻하게 잇는 교랑의 SNS예요.',
+    chips: ['피드 · 일상 공유', '친구 · 팔로우', '실시간 채팅'],
     badge: { label: 'MAIN', bg: 'var(--deep-2)' },
     icon: (
       <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-2.8-.4L4 21l1.4-4A8.3 8.3 0 0 1 12 3.5a8.4 8.4 0 0 1 9 8Z" />
@@ -42,10 +42,10 @@ const services: Service[] = [
     pillDark: true,
   },
   {
-    name: '교랑 무드',
-    tag: '감정 기록 · 무드 SNS',
-    desc: '오늘의 기분을 색과 글로 남기고, 비슷한 감정의 사람들과 만나요. 마음의 결을 따라가는 감성 공간이에요.',
-    chips: ['무드 기록', '감정 피드', '익명 공유'],
+    name: '교랑무드',
+    tag: '마음 기록 · AI 비서',
+    desc: '마스코트 무디와 대화하며 오늘의 마음을 기록해요. AI 비서가 이야기를 들어주고, 당신에게 꼭 맞는 한마디를 건네요.',
+    chips: ['기분 기록', 'AI 상담', '돌아보기'],
     badge: { label: 'NEW', bg: '#FF5C97' },
     icon: (
       <>
@@ -74,8 +74,8 @@ export default function Services() {
       <div className="wrap">
         <div className="sec-head center reveal">
           <span className="eyebrow">Our Services</span>
-          <h2>교랑이와 함께하는 모든 공간</h2>
-          <p>하나의 마음에서 출발한 두 가지 서비스. 교랑이가 언제나 곁에 있어요.</p>
+          <h2>교랑이와 함께하는 두 공간</h2>
+          <p>사람과 잇는 SNS, 마음을 돌보는 AI 비서. 교랑이 두 가지 방식으로 곁에 있어요.</p>
         </div>
 
         <div className="svc-grid">

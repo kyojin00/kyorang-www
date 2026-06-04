@@ -32,7 +32,7 @@ export default function Footer() {
               교랑톡 <em style={{ fontStyle: 'normal', opacity: 0.5 }}>앱</em>
             </span>
             <span>
-              교랑 무드 <em style={{ fontStyle: 'normal', opacity: 0.5 }}>앱</em>
+              교랑무드 <em style={{ fontStyle: 'normal', opacity: 0.5 }}>앱</em>
             </span>
           </div>
 
