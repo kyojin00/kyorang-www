@@ -9,13 +9,7 @@ export default function Footer() {
                 className="mark"
                 style={{ background: 'rgba(255,255,255,.1)', boxShadow: 'none' }}
               >
-                <svg width="18" height="18" viewBox="0 0 24 24">
-                  <path
-                    d="M12 3.2C6.9 3.2 3 6.5 3 10.6c0 2.5 1.6 4.7 4 6-.2 1-.7 2.2-1.4 3 .1.1.3.2.5.1 1.5-.4 2.7-1.1 3.5-1.7.8.2 1.6.3 2.4.3 5.1 0 9-3.3 9-7.4S17.1 3.2 12 3.2Z"
-                    fill="#fff"
-                    opacity=".9"
-                  />
-                </svg>
+                <img src="/kyorang-mark.png" alt="교랑 로고" />
               </span>
               <span className="brand-name">KYORANG</span>
             </div>

@@ -49,6 +49,7 @@ nav.scrolled{background:rgba(251,248,243,.82);backdrop-filter:blur(20px) saturat
 .brand{display:flex;align-items:center;gap:11px;}
 .mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(140deg,#8A78C7,var(--deep-2));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(58,43,102,.28);}
 .brand-name{font-size:20px;font-weight:800;letter-spacing:-.03em;color:var(--deep-2);}
+.mark img{width:74%;height:74%;object-fit:contain;display:block;}
 .nav-menu{display:flex;align-items:center;gap:2px;}
 .nav-link{font-size:15px;font-weight:600;color:var(--text-mid);padding:9px 16px;border-radius:10px;transition:.2s;}
 .nav-link:hover{color:var(--deep-2);background:rgba(124,107,181,.07);}
