@@ -1,18 +1,7 @@
 const feats = [
   {
-    title: '피드로 일상 공유',
-    desc: '사진과 글로 오늘을 남기고 친구들과 나눠요.',
-    icon: (
-      <>
-        <rect x="4" y="4" width="16" height="16" rx="3" />
-        <path d="M4 15l4-4 3 3 5-5 4 4" />
-        <circle cx="9" cy="9" r="1.4" />
-      </>
-    ),
-  },
-  {
-    title: '친구 · 팔로우',
-    desc: '관심 가는 사람과 이어지고 소식을 받아봐요.',
+    title: '친구 목록 · 즐겨찾기',
+    desc: '자주 연락하는 친구를 한눈에 모아봐요.',
     icon: (
       <>
         <circle cx="9" cy="8" r="3" />
@@ -22,13 +11,29 @@ const feats = [
     ),
   },
   {
-    title: '실시간 채팅',
-    desc: '1:1·그룹 메시지로 언제든 가깝게 대화해요.',
+    title: '1:1 · 그룹 채팅',
+    desc: '단둘이도, 여럿이도 실시간으로 대화해요.',
     icon: (
       <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-2.8-.4L4 21l1.4-4A8.3 8.3 0 0 1 12 3.5a8.4 8.4 0 0 1 9 8Z" />
     ),
   },
+  {
+    title: '프로필 · 상태 메시지',
+    desc: '지금의 마음을 한 줄로 표현해요.',
+    icon: (
+      <>
+        <rect x="4" y="5" width="16" height="14" rx="3" />
+        <circle cx="9" cy="11" r="2" />
+        <path d="M5.5 17c.6-1.8 2-2.6 3.5-2.6s2.9.8 3.5 2.6M14.5 10h3M14.5 13h3" />
+      </>
+    ),
+  },
 ]
+
+const purpleBubble = {
+  maxWidth: '80%',
+  background: 'linear-gradient(135deg,#8A78C7,var(--purple-soft))',
+} as const
 
 export default function Flagship() {
   return (
@@ -47,7 +52,7 @@ export default function Flagship() {
           >
             사람과 사람을 잇는
             <br />
-            가장 따뜻한 SNS
+            가장 가까운 메신저
           </h2>
           <p
             style={{
@@ -58,8 +63,8 @@ export default function Flagship() {
               maxWidth: '430px',
             }}
           >
-            교랑톡은 일상을 나누고 마음으로 이어지는 소셜 공간이에요. 피드로 하루를
-            공유하고, 친구와 메시지로 가깝게 연결돼요.
+            친구를 추가하고, 1:1·그룹으로 실시간 대화해요. 매일의 이야기가 편하게
+            오가는 교랑의 메신저예요.
           </p>
 
           <div className="fg-feats">
@@ -95,120 +100,41 @@ export default function Flagship() {
             <div className="fg-head">
               <span className="fg-avatar">
                 <svg className="ico" viewBox="0 0 24 24">
-                  <circle cx="9" cy="8" r="3" />
-                  <path d="M3 19c0-3 2.7-5 6-5s6 2 6 5" />
-                  <path d="M16 5.5a3 3 0 0 1 0 5.5" />
+                  <circle cx="12" cy="9" r="3.2" />
+                  <path d="M6 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" />
                 </svg>
               </span>
               <div>
-                <div
-                  style={{
-                    fontSize: '17px',
-                    fontWeight: 800,
-                    letterSpacing: '-.02em',
-                  }}
-                >
-                  교랑톡
+                <div style={{ fontSize: '17px', fontWeight: 800, letterSpacing: '-.02em' }}>
+                  익명2
                 </div>
-                <div
-                  style={{
-                    fontSize: '12px',
-                    color: 'rgba(231,224,255,.55)',
-                    marginTop: '2px',
-                  }}
-                >
-                  소셜 피드
+                <div style={{ fontSize: '12px', color: 'rgba(231,224,255,.55)', marginTop: '2px' }}>
+                  <span className="fg-online" />
+                  온라인
                 </div>
               </div>
             </div>
-
-            <div
-              style={{
-                position: 'relative',
-                zIndex: 1,
-                background: 'rgba(255,255,255,.08)',
-                border: '1px solid rgba(255,255,255,.1)',
-                borderRadius: '18px',
-                padding: '18px',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  marginBottom: '13px',
-                }}
-              >
-                <span
-                  style={{
-                    width: '34px',
-                    height: '34px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg,#8A78C7,#E0689C)',
-                    display: 'block',
-                  }}
-                />
-                <div>
-                  <div
-                    style={{ fontSize: '13.5px', fontWeight: 700, color: '#fff' }}
-                  >
-                    달빛산책
-                  </div>
-                  <div style={{ fontSize: '11px', color: 'rgba(231,224,255,.5)' }}>
-                    3분 전
-                  </div>
-                </div>
+            <div className="fg-chat">
+              <div className="bubble them" style={{ maxWidth: '80%' }}>
+                오늘 점심 뭐 먹었어?
               </div>
-              <p
-                style={{
-                  fontSize: '13.5px',
-                  lineHeight: 1.65,
-                  color: 'rgba(255,255,255,.85)',
-                  marginBottom: '15px',
-                }}
-              >
-                퇴근길 노을이 예뻐서 한참 올려다봤어요. 오늘 하루도 다들 수고했어요.
-              </p>
-              <div
-                style={{
-                  display: 'flex',
-                  gap: '18px',
-                  alignItems: 'center',
-                  color: 'rgba(231,224,255,.6)',
-                  fontSize: '12.5px',
-                  fontWeight: 600,
-                }}
-              >
-                <span
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-                >
-                  <svg
-                    className="ico"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    stroke="#E0689C"
-                  >
-                    <path d="M12 20s-7-4.3-9.2-9C1.5 8 3 4.8 6.2 4.8c2 0 3.2 1.2 3.8 2.4.6-1.2 1.8-2.4 3.8-2.4 3.2 0 4.7 3.2 3.4 6.2C19 15.7 12 20 12 20Z" />
-                  </svg>
-                  24
-                </span>
-                <span
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-                >
-                  <svg
-                    className="ico"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    stroke="rgba(255,255,255,.7)"
-                  >
-                    <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-2.8-.4L4 21l1.4-4A8.3 8.3 0 0 1 12 3.5a8.4 8.4 0 0 1 9 8Z" />
-                  </svg>
-                  6
-                </span>
+              <div className="bubble me" style={purpleBubble}>
+                김밥 먹었지
               </div>
+              <div className="bubble them" style={{ maxWidth: '80%' }}>
+                헐 나도! 우리 통했다
+              </div>
+              <div className="bubble me" style={purpleBubble}>
+                다음엔 같이 먹자
+              </div>
+            </div>
+            <div className="fg-inputbar">
+              <span>메시지 입력</span>
+              <span className="send">
+                <svg className="ico" width="15" height="15" viewBox="0 0 24 24" stroke="#fff">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
             </div>
           </div>
         </div>

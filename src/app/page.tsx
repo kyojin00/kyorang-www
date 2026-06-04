@@ -5,6 +5,7 @@ import Stats from '@/components/Stats'
 import About from '@/components/About'
 import Services from '@/components/Services'
 import Flagship from '@/components/Flagship'
+import MoodFeature from '@/components/MoodFeature'
 import Cta from '@/components/Cta'
 import Footer from '@/components/Footer'
 
@@ -18,6 +19,7 @@ export default function HomePage() {
       <About />
       <Services />
       <Flagship />
+      <MoodFeature />
       <Cta />
       <Footer />
     </>

@@ -18,6 +18,9 @@ export default function Nav() {
           <a href="#flagship" className="nav-link">
             교랑톡
           </a>
+          <a href="#mood" className="nav-link">
+            교랑무드
+          </a>
           <a href="#contact" className="nav-cta">
             문의하기
           </a>
