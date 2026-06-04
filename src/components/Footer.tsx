@@ -47,6 +47,14 @@ export default function Footer() {
           2023-마산합포-0234
         </div>
 
+        <div className="ft-legal">
+          <a href="/terms">이용약관</a>
+          <a className="strong" href="/privacy">
+            개인정보처리방침
+          </a>
+          <a href="/youth">청소년보호정책</a>
+        </div>
+
         <div className="ft-bottom">
           <p>© 2026 KYORANG. All rights reserved.</p>
           <p>말하지 못한 마음을 꺼낼 수 있는 곳</p>
