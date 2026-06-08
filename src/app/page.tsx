@@ -1,3 +1,4 @@
+import Splash from '@/components/Splash'
 import SiteEffects from '@/components/SiteEffects'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
@@ -12,6 +13,7 @@ import Footer from '@/components/Footer'
 export default function HomePage() {
   return (
     <>
+      <Splash />
       <SiteEffects />
       <Nav />
       <Hero />
