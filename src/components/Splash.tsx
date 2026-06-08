@@ -15,7 +15,7 @@ export default function Splash() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const DISPLAY = 260 // 로고 표시 크기(px). 더 크게 원하면 이 숫자만 키우세요.
+    const DISPLAY = 360 // 로고 표시 크기(px). 더 크게 원하면 이 숫자만 키우세요.
     const GRID = 58 // 가로 점 개수(촘촘함). 키우면 점이 작고 정밀해져요.
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
     const colors = ['#EC8A6E', '#D9573A', '#F5C96B']
