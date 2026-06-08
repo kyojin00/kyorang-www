@@ -4,23 +4,40 @@ import { useEffect, useRef, useState } from 'react'
 
 // 진입 스플래시: 로고(/kyorang-mark.png)를 점으로 분해해
 // 바깥에서부터 하나씩 날아와 로고가 완성되는 인트로.
+// 같은 세션에서는 한 번만 표시되고, 탭/브라우저를 닫았다 다시 들어오면 다시 보입니다.
+const SEEN_KEY = 'kyorang_splash_seen'
+
 export default function Splash() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [hidden, setHidden] = useState(false)
+  const [skipped, setSkipped] = useState(false)
 
   useEffect(() => {
+    // 이미 이번 세션에 봤으면 아예 표시하지 않음
+    let seen = false
+    try {
+      seen = !!sessionStorage.getItem(SEEN_KEY)
+    } catch {}
+    if (seen) {
+      setSkipped(true)
+      return
+    }
+    try {
+      sessionStorage.setItem(SEEN_KEY, '1')
+    } catch {}
+
     const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const DISPLAY = 360 // 로고 표시 크기(px). 더 크게 원하면 이 숫자만 키우세요.
+    const DISPLAY = 380 // 로고 표시 크기(px). 더 크게 원하면 이 숫자만 키우세요.
     const GRID = 58 // 가로 점 개수(촘촘함). 키우면 점이 작고 정밀해져요.
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
     const colors = ['#EC8A6E', '#D9573A', '#F5C96B']
 
-    const MOVE = reduce ? 1 : 620 // 점 1개가 날아오는 시간
+    const MOVE = reduce ? 1 : 500 // 점 1개가 날아오는 시간
     const SPREAD = reduce ? 0 : 1300 // 점들 사이 시차(전체 채워지는 시간)
     const HOLD = 700 // 완성 후 잠깐 멈춤
 
@@ -133,6 +150,8 @@ export default function Splash() {
       clearTimeout(safety)
     }
   }, [])
+
+  if (skipped) return null
 
   return (
     <div className={'splash' + (hidden ? ' splash-out' : '')} aria-hidden>
