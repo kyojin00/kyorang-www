@@ -1,11 +1,6 @@
 export default function Hero() {
   return (
     <header className="hero" id="top">
-      <div className="aurora">
-        <span className="b1" />
-        <span className="b2" />
-        <span className="b3" />
-      </div>
       <div className="wrap">
         <div className="reveal in">
           <span className="eyebrow">
@@ -35,7 +30,6 @@ export default function Hero() {
         </div>
 
         <div className="hero-visual reveal in">
-          <div className="phone-ring" />
           <div className="phone">
             <div className="phone-screen">
               {/* 교랑무드 화면 */}
@@ -199,7 +193,7 @@ export default function Hero() {
           <div className="float-card fc-1">
             <span
               className="ic"
-              style={{ background: 'linear-gradient(135deg,#8A78C7,#3A2B66)' }}
+              style={{ background: 'linear-gradient(135deg,var(--coral),var(--coral-deep))' }}
             >
               <svg className="ico" viewBox="0 0 24 24">
                 <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-2.8-.4L4 21l1.4-4A8.3 8.3 0 0 1 12 3.5a8.4 8.4 0 0 1 9 8Z" />
@@ -214,7 +208,7 @@ export default function Hero() {
           <div className="float-card fc-2">
             <span
               className="ic"
-              style={{ background: 'linear-gradient(135deg,#8A5BD0,#E0689C)' }}
+              style={{ background: 'linear-gradient(135deg,var(--honey),var(--coral))' }}
             >
               <svg className="ico" viewBox="0 0 24 24">
                 <path d="M20 13.5A8 8 0 1 1 10.5 4a6.3 6.3 0 0 0 9.5 9.5Z" />
