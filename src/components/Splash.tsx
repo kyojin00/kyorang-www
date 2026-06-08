@@ -1,55 +1,151 @@
-// 진입 시 로고 스플래시 인트로.
-// JS 없이 CSS 애니메이션만으로 등장 → 약 2.5초 머문 뒤 자동 페이드아웃됩니다.
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+
+// 진입 스플래시: 로고(/kyorang-mark.png)를 점으로 분해해
+// 바깥에서부터 하나씩 날아와 로고가 완성되는 인트로.
 export default function Splash() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [hidden, setHidden] = useState(false)
+
+  useEffect(() => {
+    const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const DISPLAY = 260 // 로고 표시 크기(px). 더 크게 원하면 이 숫자만 키우세요.
+    const GRID = 58 // 가로 점 개수(촘촘함). 키우면 점이 작고 정밀해져요.
+    const dpr = Math.min(window.devicePixelRatio || 1, 2)
+    const colors = ['#EC8A6E', '#D9573A', '#F5C96B']
+
+    const MOVE = reduce ? 1 : 620 // 점 1개가 날아오는 시간
+    const SPREAD = reduce ? 0 : 1300 // 점들 사이 시차(전체 채워지는 시간)
+    const HOLD = 700 // 완성 후 잠깐 멈춤
+
+    let raf = 0
+    let start = 0
+    let finishedAt = 0
+    let dispW = DISPLAY
+    let dispH = DISPLAY
+    let dots: {
+      sx: number; sy: number; tx: number; ty: number
+      delay: number; c: string; r: number
+    }[] = []
+
+    // 안전장치: 어떤 이유로든 5초 안에 안 끝나면 강제로 사라지게
+    const safety = setTimeout(() => setHidden(true), 5000)
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3)
+
+    const img = new Image()
+    img.src = '/kyorang-mark.png'
+    img.onerror = () => setHidden(true)
+    img.onload = () => {
+      const ratio = img.height / img.width || 1
+      const cols = GRID
+      const rows = Math.max(1, Math.round(GRID * ratio))
+
+      const off = document.createElement('canvas')
+      off.width = cols
+      off.height = rows
+      const octx = off.getContext('2d')
+      if (!octx) return
+      octx.drawImage(img, 0, 0, cols, rows)
+      const data = octx.getImageData(0, 0, cols, rows).data
+
+      const cell = DISPLAY / cols
+      const dotR = cell * 0.42
+      dispW = DISPLAY
+      dispH = cell * rows
+      const cx = dispW / 2
+      const cy = dispH / 2
+
+      const raw: { tx: number; ty: number; dist: number; c: string }[] = []
+      let maxDist = 1
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const a = data[(y * cols + x) * 4 + 3]
+          if (a > 130) {
+            const tx = x * cell + cell / 2
+            const ty = y * cell + cell / 2
+            const dist = Math.hypot(tx - cx, ty - cy)
+            if (dist > maxDist) maxDist = dist
+            raw.push({ tx, ty, dist, c: colors[Math.floor(Math.random() * colors.length)] })
+          }
+        }
+      }
+
+      dots = raw.map((p) => {
+        // 시작점: 목표를 중심 바깥으로 멀리 밀어낸 위치(+ 약간의 랜덤)
+        const ang = Math.atan2(p.ty - cy, p.tx - cx) + (Math.random() - 0.5) * 0.6
+        const reach = maxDist * (2.2 + Math.random() * 1.6)
+        return {
+          sx: cx + Math.cos(ang) * reach,
+          sy: cy + Math.sin(ang) * reach,
+          tx: p.tx,
+          ty: p.ty,
+          // 바깥(중심에서 먼) 점일수록 먼저 → 테두리부터 채워짐
+          delay: reduce ? 0 : (1 - p.dist / maxDist) * SPREAD,
+          c: p.c,
+          r: dotR,
+        }
+      })
+
+      canvas.style.width = dispW + 'px'
+      canvas.style.height = dispH + 'px'
+      canvas.width = Math.round(dispW * dpr)
+      canvas.height = Math.round(dispH * dpr)
+      ctx.scale(dpr, dpr)
+
+      start = performance.now()
+      raf = requestAnimationFrame(loop)
+    }
+
+    const loop = (now: number) => {
+      const t = now - start
+      ctx.clearRect(0, 0, dispW, dispH)
+      let allDone = true
+      for (const dot of dots) {
+        const p = Math.max(0, Math.min((t - dot.delay) / MOVE, 1))
+        if (p < 1) allDone = false
+        const e = easeOut(p)
+        ctx.globalAlpha = p
+        ctx.fillStyle = dot.c
+        ctx.beginPath()
+        ctx.arc(dot.sx + (dot.tx - dot.sx) * e, dot.sy + (dot.ty - dot.sy) * e, dot.r, 0, Math.PI * 2)
+        ctx.fill()
+      }
+      ctx.globalAlpha = 1
+
+      if (allDone && dots.length) {
+        if (!finishedAt) finishedAt = now
+        if (now - finishedAt > HOLD) {
+          setHidden(true)
+          return
+        }
+      }
+      raf = requestAnimationFrame(loop)
+    }
+
+    return () => {
+      cancelAnimationFrame(raf)
+      clearTimeout(safety)
+    }
+  }, [])
+
   return (
-    <div className="splash" aria-hidden>
+    <div className={'splash' + (hidden ? ' splash-out' : '')} aria-hidden>
       <style>{`
         .splash{
           position:fixed;inset:0;z-index:9999;
-          display:flex;flex-direction:column;align-items:center;justify-content:center;
-          background:var(--cream);
-          animation:splashHide 3.2s ease forwards;
-        }
-        .splash-logo{
-          display:flex;flex-direction:column;align-items:center;gap:18px;
-          animation:splashPop .7s cubic-bezier(.22,1.2,.36,1) both;
-        }
-        .splash-mark{
-          width:92px;height:92px;border-radius:26px;
-          background:linear-gradient(140deg,var(--coral),var(--coral-deep));
           display:flex;align-items:center;justify-content:center;
-          box-shadow:0 18px 40px rgba(217,87,58,.32);
+          background:var(--cream);
+          transition:opacity .6s ease, visibility .6s ease;
         }
-        .splash-mark img{width:72%;height:72%;object-fit:contain;display:block;}
-        .splash-name{
-          font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--ink);
-          animation:splashFade .6s ease .25s both;
-        }
-        @keyframes splashPop{
-          0%{opacity:0;transform:scale(.6)}
-          60%{opacity:1;transform:scale(1.08)}
-          100%{opacity:1;transform:scale(1)}
-        }
-        @keyframes splashFade{
-          from{opacity:0;transform:translateY(6px)}
-          to{opacity:1;transform:none}
-        }
-        @keyframes splashHide{
-          0%,78%{opacity:1;visibility:visible;}
-          100%{opacity:0;visibility:hidden;}
-        }
-        @media(prefers-reduced-motion:reduce){
-          .splash{animation-duration:1s;}
-          .splash-logo,.splash-name{animation:none;}
-        }
+        .splash-out{opacity:0;visibility:hidden;pointer-events:none;}
       `}</style>
-
-      <div className="splash-logo">
-        <span className="splash-mark">
-          <img src="/kyorang-mark.png" alt="" />
-        </span>
-        <span className="splash-name">KYORANG</span>
-      </div>
+      <canvas ref={canvasRef} />
     </div>
   )
 }
