@@ -21,7 +21,7 @@ export default function Nav() {
           <a href="#mood" className="nav-link">
             교랑무드
           </a>
-          <a href="#contact" className="nav-cta">
+          <a href="/contact" className="nav-cta">
             문의하기
           </a>
         </div>

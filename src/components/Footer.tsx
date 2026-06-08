@@ -34,14 +34,12 @@ export default function Footer() {
             <h5>회사</h5>
             <a href="#about">회사소개</a>
             <a href="#services">서비스</a>
-            <a href="#contact">문의하기</a>
-            <span>rywls123450@gmail.com</span>
+            <a href="/contact">문의하기</a>
           </div>
         </div>
 
         <div className="ft-info">
-          교랑(KYORANG) &nbsp;|&nbsp; 대표 교진 &nbsp;|&nbsp; 이메일
-          rywls123450@gmail.com
+          교랑(KYORANG) &nbsp;|&nbsp; 대표 교진
           <br />
           사업자등록번호 832-01-02741 &nbsp;|&nbsp; 통신판매업 신고번호
           2023-마산합포-0234
