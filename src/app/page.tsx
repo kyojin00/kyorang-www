@@ -6,6 +6,8 @@ import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Packages from '@/components/Packages'
 import Templates from '@/components/Templates'
+import Portfolio from '@/components/Portfolio'
+import Reviews from '@/components/Reviews'
 import Faq from '@/components/Faq'
 import Cta from '@/components/Cta'
 import Footer from '@/components/Footer'
@@ -30,7 +32,9 @@ export default async function HomePage({ searchParams }: PageProps) {
       <Nav />
       <Hero />
       <Packages />
+      <Portfolio />
       <Templates />
+      <Reviews />
       <section className="block" id="faq">
         <div className="wrap narrow">
           <div className="sec-head center reveal">

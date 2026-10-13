@@ -36,9 +36,11 @@ export default function Footer() {
         </div>
 
         <div className="ft-info">
-          {BUSINESS.name} &nbsp;|&nbsp; 대표 {BUSINESS.ceo}
+          상호 {BUSINESS.name} &nbsp;|&nbsp; 대표 {BUSINESS.ceo} &nbsp;|&nbsp; 사업자등록번호 {BUSINESS.bizNo}
           <br />
-          사업자등록번호 {BUSINESS.bizNo} &nbsp;|&nbsp; 통신판매업 신고번호 {BUSINESS.mailOrderNo}
+          통신판매업 신고번호 {BUSINESS.mailOrderNo} &nbsp;|&nbsp; 주소 {BUSINESS.address}
+          <br />
+          {BUSINESS.phone ? <>전화 {BUSINESS.phone} &nbsp;|&nbsp; </> : null}이메일 {CONTACT_EMAIL} &nbsp;|&nbsp; 호스팅 {BUSINESS.hosting}
         </div>
 
         <div className="ft-legal">
