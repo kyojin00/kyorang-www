@@ -29,6 +29,7 @@ export default function RootLayout({
     <html lang="ko">
       <head>
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        <link rel="alternate" type="application/rss+xml" title="교랑 Q&amp;A · 고객 후기" href="/rss.xml" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
