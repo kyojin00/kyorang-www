@@ -1,7 +1,5 @@
 import { MetadataRoute } from 'next'
-import { TEMPLATES } from '@/data/studio'
-
-const BASE = 'https://kyorang.com'
+import { SITE_URL as BASE, TEMPLATES } from '@/data/studio'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
