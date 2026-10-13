@@ -1,18 +1,17 @@
+import Link from 'next/link'
+
 export default function Cta() {
   return (
     <section className="block cta" id="contact">
       <div className="wrap">
         <div className="cta-box reveal">
-          <div className="inner">
-            <h2>교랑과 함께하고 싶으신가요?</h2>
-            <p>제휴·제안·문의 무엇이든 편하게 보내주세요. 빠르게 답변드릴게요.</p>
-            <a href="/contact" className="btn btn-light">
-              문의하기
-              <svg className="ico" viewBox="0 0 24 24">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
+          <div>
+            <h2>어떤 사이트가 필요하세요?</h2>
+            <p>아직 정리가 안 됐어도 괜찮아요. 하고 싶은 걸 적어 보내주시면 범위와 견적을 같이 잡아드려요.</p>
           </div>
+          <Link href="/contact" className="btn btn-light">
+            무료 견적 문의 →
+          </Link>
         </div>
       </div>
     </section>

@@ -1,63 +1,46 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { EMAIL_RE, field, mailHtml, send } from '@/lib/mail'
+import { BUDGETS, INQUIRY_TYPES } from '@/data/studio'
 
 export async function POST(req: NextRequest) {
-  const { name, email, message } = await req.json()
+  const data = await req.json().catch(() => ({}))
+
+  // 사람 눈에 안 보이는 칸. 채워져 있으면 봇이다 — 성공한 척만 한다.
+  if (field(data.website)) return NextResponse.json({ success: true })
+
+  const name = field(data.name, 50)
+  const email = field(data.email, 120)
+  const phone = field(data.phone, 30)
+  const message = field(data.message, 5000)
+  const type = INQUIRY_TYPES.find((t) => t === data.type) ?? '기타'
+  const budget = BUDGETS.find((b) => b === data.budget) ?? '미정'
+  const deadline = field(data.deadline, 50)
 
   if (!name || !email || !message) {
-    return NextResponse.json({ error: '모든 항목을 입력해주세요' }, { status: 400 })
+    return NextResponse.json({ error: '이름, 이메일, 내용을 입력해주세요' }, { status: 400 })
+  }
+  if (!EMAIL_RE.test(email)) {
+    return NextResponse.json({ error: '이메일 주소를 확인해주세요' }, { status: 400 })
   }
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
-  })
+  const rows: [string, string][] = [
+    ['유형', type],
+    ['이름', name],
+    ['이메일', email],
+  ]
+  if (phone) rows.push(['연락처', phone])
+  if (type === '웹사이트 제작 견적') {
+    rows.push(['예산', budget])
+    if (deadline) rows.push(['희망 일정', deadline])
+  }
 
   try {
-    await transporter.sendMail({
-      from: `"교랑 문의" <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER,
+    await send({
+      to: process.env.GMAIL_USER!,
       replyTo: email,
-      subject: `[교랑 문의] ${name}님의 문의`,
-      html: `
-        <div style="font-family: 'Noto Sans KR', sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 24px; background: #FDF8F3;">
-          <div style="background: linear-gradient(135deg, #3D2E6B, #7C6BB5); border-radius: 16px; padding: 32px; margin-bottom: 24px; text-align: center;">
-            <h1 style="color: white; font-size: 24px; margin: 0;">교랑 문의</h1>
-            <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0; font-size: 14px;">kyorang.com 문의 폼</p>
-          </div>
-
-          <div style="background: white; border-radius: 16px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(61,46,107,0.08);">
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #F5E6D3; font-size: 13px; color: #A89AB8; width: 80px;">이름</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #F5E6D3; font-size: 14px; color: #2A2035; font-weight: 500;">${name}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #F5E6D3; font-size: 13px; color: #A89AB8;">이메일</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #F5E6D3; font-size: 14px; color: #2A2035; font-weight: 500;">${email}</td>
-              </tr>
-            </table>
-          </div>
-
-          <div style="background: white; border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(61,46,107,0.08);">
-            <p style="font-size: 13px; color: #A89AB8; margin: 0 0 12px;">메시지</p>
-            <p style="font-size: 14px; color: #2A2035; line-height: 1.8; margin: 0; white-space: pre-wrap;">${message}</p>
-          </div>
-
-          <div style="text-align: center; margin-top: 24px;">
-            <a href="mailto:${email}" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, #7C6BB5, #3D2E6B); color: white; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none;">
-              ${name}님께 답장하기
-            </a>
-          </div>
-
-          <p style="text-align: center; font-size: 12px; color: #A89AB8; margin-top: 24px;">© 2026 KYORANG</p>
-        </div>
-      `,
+      subject: `[교랑 문의 · ${type}] ${name}님`,
+      html: mailHtml('교랑 문의', `${type} · kyorang.com`, rows, message),
     })
-
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('메일 발송 오류:', error)

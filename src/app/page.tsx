@@ -4,11 +4,9 @@ import Splash from '@/components/Splash'
 import SiteEffects from '@/components/SiteEffects'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import Stats from '@/components/Stats'
-import About from '@/components/About'
-import Services from '@/components/Services'
-import Flagship from '@/components/Flagship'
-import MoodFeature from '@/components/MoodFeature'
+import Packages from '@/components/Packages'
+import Templates from '@/components/Templates'
+import Faq from '@/components/Faq'
 import Cta from '@/components/Cta'
 import Footer from '@/components/Footer'
 
@@ -31,11 +29,17 @@ export default async function HomePage({ searchParams }: PageProps) {
       <SiteEffects />
       <Nav />
       <Hero />
-      <Stats />
-      <About />
-      <Services />
-      <Flagship />
-      <MoodFeature />
+      <Packages />
+      <Templates />
+      <section className="block" id="faq">
+        <div className="wrap narrow">
+          <div className="sec-head center reveal">
+            <p className="label">FAQ</p>
+            <h2>자주 묻는 질문</h2>
+          </div>
+          <Faq />
+        </div>
+      </section>
       <Cta />
       <Footer />
     </>
