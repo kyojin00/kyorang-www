@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { BUSINESS, CONTACT_EMAIL } from '@/data/studio'
+import KakaoButton from './KakaoButton'
 
 export default function Footer() {
   return (
     <footer>
+      <KakaoButton />
       <div className="wrap">
         <div className="ft-top">
           <div className="ft-brand">
