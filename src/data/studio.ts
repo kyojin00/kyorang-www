@@ -1,6 +1,10 @@
 // 사이트에 보이는 가격·상품·문구는 전부 여기서 고칩니다.
 // 컴포넌트는 이 값을 그리기만 합니다.
 
+// 검색엔진에 알리는 대표 주소. Vercel 에서 kyorang.com → www.kyorang.com 으로 넘겨주므로
+// 사이트맵·robots·메타데이터는 리디렉션 없이 바로 열리는 www 주소를 쓴다.
+export const SITE_URL = 'https://www.kyorang.com'
+
 export const CONTACT_EMAIL = 'rywls123450@gmail.com'
 
 // 전자상거래법상 사이트에 밝혀야 하는 사업자 정보 (사업자등록증 기준)
@@ -148,7 +152,7 @@ export const PORTFOLIO: Work[] = [
     kind: '웹사이트',
     desc: '제작 의뢰·템플릿 판매 사이트. 견적 문의와 주문을 메일로 받는 기능까지 직접 만들었어요.',
     tags: ['Next.js', '반응형', '문의·주문 메일'],
-    link: 'https://kyorang.com',
+    link: SITE_URL,
   },
   {
     title: '교랑무드',
