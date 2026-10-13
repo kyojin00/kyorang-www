@@ -17,7 +17,7 @@ export const BUSINESS = {
   phone: '', // 대표 전화 — 비우면 표시 안 함. 통신판매업자는 표시해야 하니 꼭 채우기
   hosting: 'Vercel Inc.',
   // 카카오톡 채널 채팅 주소 (예: 'https://pf.kakao.com/_xxxxx/chat'). 비우면 상담 버튼이 안 보인다.
-  kakao: '',
+  kakao: 'https://pf.kakao.com/_HpwxhX/chat',
 }
 
 // ── 만드는 것 ─────────────────────────────────
