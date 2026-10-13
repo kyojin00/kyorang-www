@@ -321,6 +321,32 @@ footer{background:var(--ink);color:#fff;padding:70px 0 44px;}
 .cs-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .cs-tags span{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.75);padding:5px 10px;border:1px solid rgba(255,255,255,.18);border-radius:4px;}
 
+/* ===== 게시판 (후기·Q&A) ===== */
+.bd-form{margin-top:4px;}
+.bd-done{padding:18px 20px;border-radius:var(--r);background:var(--accent-soft);color:var(--coral-deep);font-weight:700;font-size:14.5px;}
+.bd-stars{display:flex;gap:4px;}
+.bd-stars button{font-size:28px;line-height:1;background:none;border:none;cursor:pointer;color:var(--line);padding:2px;}
+.bd-stars button.on{color:var(--honey);}
+.bd-stars-read{color:var(--honey);font-size:15px;letter-spacing:1px;}
+.bd-stars-read i{font-style:normal;color:var(--line);}
+.bd-list{list-style:none;margin-top:40px;border-top:1.5px solid var(--ink);}
+.bd-item{border-bottom:1px solid var(--line);padding:22px 2px;}
+.bd-empty{padding:40px 0;text-align:center;color:var(--text-dim);font-size:15px;}
+.bd-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px;}
+.bd-meta{font-size:13px;color:var(--text-dim);}
+.bd-body{font-size:15px;line-height:1.8;color:var(--text);white-space:pre-wrap;}
+.bd-item details summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
+.bd-item details summary::-webkit-details-marker{display:none;}
+.bd-item details summary b{font-size:16px;color:var(--ink);flex:1;min-width:200px;}
+.bd-item details[open] .bd-body{margin-top:14px;}
+.bd-badge{font-size:12px;font-weight:700;padding:3px 8px;border-radius:4px;background:var(--cream-2);color:var(--text-mid);}
+.bd-badge.done{background:var(--coral);color:#fff;}
+.bd-answer{margin-top:16px;padding:16px 18px;border-left:3px solid var(--coral);background:var(--paper);}
+.bd-a{display:block;font-size:12.5px;font-weight:800;color:var(--coral);margin-bottom:6px;}
+.bd-answer p{font-size:15px;line-height:1.8;white-space:pre-wrap;}
+.sec-head p a{color:var(--coral);text-decoration:underline;}
+.rv .bd-stars-read{display:block;margin-bottom:10px;}
+
 /* ===== 후기 ===== */
 .rv-sec{background:var(--paper);border-top:1px solid var(--line);}
 .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}

@@ -7,7 +7,8 @@ const LINKS = [
   { href: '/#packages', label: '제작 패키지' },
   { href: '/#portfolio', label: '포트폴리오' },
   { href: '/templates', label: '템플릿' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: '/reviews', label: '후기' },
+  { href: '/qna', label: 'Q&A' },
 ]
 
 export default function Nav() {

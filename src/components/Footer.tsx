@@ -24,6 +24,8 @@ export default function Footer() {
             <h5>제작</h5>
             <Link href="/#packages">제작 패키지</Link>
             <Link href="/templates">템플릿</Link>
+            <Link href="/reviews">고객 후기</Link>
+            <Link href="/qna">Q&amp;A</Link>
             <Link href="/contact">견적 문의</Link>
           </div>
 
