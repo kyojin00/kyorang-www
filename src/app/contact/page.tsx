@@ -69,7 +69,7 @@ export default function ContactPage() {
       <main className="page-top">
         <div className="wrap narrow">
           <div className="sec-head center">
-            <h2>문의하기</h2>
+            <h1>문의하기</h1>
             <p>
               제작 견적, 템플릿, 교랑 앱 문의 모두 여기서 받아요.
               <br />

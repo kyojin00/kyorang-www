@@ -3,6 +3,8 @@ import LegalPage from '@/components/LegalPage'
 
 export const metadata: Metadata = {
   title: '청소년보호정책 — 교랑(KYORANG)',
+  description: '교랑(KYORANG)의 청소년보호정책입니다.',
+  alternates: { canonical: '/youth' },
 }
 
 export default function YouthPage() {

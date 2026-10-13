@@ -101,7 +101,7 @@ nav.scrolled,nav.open{background:var(--cream);border-bottom:1px solid var(--line
 section.block{padding:112px 0;}
 .sec-head{max-width:680px;margin-bottom:56px;}
 .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
-.sec-head h2{font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.24;color:var(--ink);}
+.sec-head h1,.sec-head h2{font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.24;color:var(--ink);}
 .sec-head p{font-size:17px;line-height:1.8;color:var(--text-mid);margin-top:16px;}
 .page-top{padding:120px 0 96px;min-height:70vh;}
 

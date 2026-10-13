@@ -3,6 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: '인증 완료 - 교랑빌리지',
   description: '이메일 인증이 완료되었어요',
+  robots: { index: false, follow: false },
 };
 
 export default function ConfirmedPage() {
