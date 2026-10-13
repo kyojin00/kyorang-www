@@ -5,12 +5,12 @@ import { SITE_URL } from '@/data/studio'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: '교랑',
-  title: '교랑 (KYORANG) — 웹사이트 제작 · 템플릿',
+  title: '교랑 (KYORANG) — 자동화 · 프로그램 · 웹사이트 제작',
   description:
-    '원페이지 랜딩부터 예약·관리자 기능이 있는 웹서비스까지. 맞춤 제작과 바로 쓰는 웹사이트 템플릿을 판매합니다.',
+    '업무 자동화·매크로, 엑셀·문서 자동화, ERP 연동 사내 프로그램, 홈페이지·웹서비스, 앱까지 맞춤 제작합니다. 바로 쓰는 웹사이트 템플릿도 판매해요.',
   openGraph: {
-    title: '교랑 (KYORANG) — 웹사이트 제작 · 템플릿',
-    description: '필요한 만큼만, 제대로 만든 웹사이트.',
+    title: '교랑 (KYORANG) — 자동화 · 프로그램 · 웹사이트 제작',
+    description: '손으로 하던 일, 자동으로 바꿔드려요.',
     siteName: 'KYORANG',
     locale: 'ko_KR',
     type: 'website',

@@ -105,6 +105,16 @@ section.block{padding:112px 0;}
 .sec-head p{font-size:17px;line-height:1.8;color:var(--text-mid);margin-top:16px;}
 .page-top{padding:120px 0 96px;min-height:70vh;}
 
+/* ===== 만드는 것 ===== */
+.svc-sec{background:var(--paper);border-bottom:1px solid var(--line);}
+.svc-list{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);}
+.svc-list li{padding:36px 26px 40px;}
+.svc-list li + li{border-left:1px solid var(--line);}
+.svc-list li:first-child{padding-left:0;}
+.svc-n{display:block;font-size:12px;font-weight:800;color:var(--coral);margin-bottom:12px;}
+.svc-list h2{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:8px;}
+.svc-list p{font-size:14px;line-height:1.7;color:var(--text-mid);}
+
 /* ===== 패키지 ===== */
 .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);border-radius:var(--r);overflow:hidden;background:var(--paper);}
 .pkg{position:relative;padding:34px 30px;display:flex;flex-direction:column;}
@@ -321,6 +331,10 @@ footer{background:var(--ink);color:#fff;padding:70px 0 44px;}
 
 @media(max-width:900px){
   .rv-grid,.cs-grid,.cs-flow,.cs-foot{grid-template-columns:1fr;}
+  .svc-list{grid-template-columns:1fr 1fr;}
+  .svc-list li{padding:28px 20px 28px 0;}
+  .svc-list li + li{border-left:none;}
+  .svc-list li:nth-child(n+3){border-top:1px solid var(--line);}
   .cs-flow li + li{border-left:none;border-top:1px solid rgba(255,255,255,.18);}
   .cs-flow li + li::before{left:50%;top:-11px;transform:translateX(-50%) rotate(90deg);}
   .cs-feat{padding-right:0;}

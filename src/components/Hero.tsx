@@ -4,15 +4,15 @@ export default function Hero() {
     <header className="hero" id="top">
       <div className="wrap">
         <div>
-          <p className="label">KYORANG WEB STUDIO</p>
+          <p className="label">KYORANG DEV STUDIO</p>
           <h1>
-            필요한 만큼만,
+            손으로 하던 일,
             <br />
-            <span className="grad">제대로 만든</span> 웹사이트
+            <span className="grad">자동으로</span> 바꿔드려요
           </h1>
           <p className="lead">
-            가게 소개 한 장부터 예약·관리자 기능이 있는 서비스까지. 앱 세 개를 직접 만들고
-            운영하는 개발자가 기획부터 오픈까지 맡아요.
+            반복 업무를 줄이는 자동화·매크로, 회사에 꼭 맞는 업무 프로그램, 홈페이지와 앱까지.
+            필요한 걸 말씀해 주시면 기획부터 운영까지 끝까지 맡아요.
           </p>
           <div className="hero-actions">
             <Link href="/contact" className="btn btn-primary">

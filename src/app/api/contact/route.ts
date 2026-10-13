@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     ['이메일', email],
   ]
   if (phone) rows.push(['연락처', phone])
-  if (type === '웹사이트 제작 견적') {
+  if (type === '웹사이트 제작 견적' || type === '프로그램 · 자동화 견적') {
     rows.push(['예산', budget])
     if (deadline) rows.push(['희망 일정', deadline])
   }
