@@ -18,6 +18,7 @@ const empty = {
   budget: BUDGETS[0] as string,
   deadline: '',
   message: '',
+  coupon: '',
   website: '',
 }
 
@@ -53,7 +54,7 @@ export default function ContactPage() {
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data.error || '발송 중 오류가 발생했어요')
-      track('문의 보냄', { type: form.type })
+      track('문의 보냄', { type: form.type, coupon: form.coupon ? 'y' : 'n' })
       setSent(true)
       setForm(empty)
     } catch (err) {
@@ -121,6 +122,18 @@ export default function ContactPage() {
                   <label>연락처 (선택)</label>
                   <input className="hf-input" type="tel" placeholder="010-0000-0000" value={form.phone} onChange={set('phone')} />
                 </div>
+                {isBuild ? (
+                  <div className="hf-field">
+                    <label>쿠폰번호 (선택)</label>
+                    <input
+                      className="hf-input"
+                      inputMode="numeric"
+                      placeholder="카카오톡 채널 쿠폰 12자리"
+                      value={form.coupon}
+                      onChange={set('coupon')}
+                    />
+                  </div>
+                ) : null}
                 {isBuild ? (
                   <div className="hf-row">
                     <div className="hf-field">
