@@ -3,7 +3,7 @@
 > 교랑(Kyorang) 웹 스튜디오 — 웹사이트 맞춤 제작 · 템플릿 판매
 
 - **도메인**: [kyorang.com](https://kyorang.com)
-- **배포**: Vercel
+- **배포**: Vercel (Pro). 서버 함수(문의·주문 메일)는 `vercel.json` 에서 서울 리전(`icn1`)으로 고정
 
 ### 무엇을 고치려면
 
