@@ -7,10 +7,7 @@ export default function Templates() {
     <section className="block tpl-sec" id="templates">
       <div className="wrap">
         <div className="sec-head reveal">
-          <span className="eyebrow">
-            <span className="dot" />
-            완성형 템플릿
-          </span>
+          <p className="label">완성형 템플릿</p>
           <h2>
             빨리, 저렴하게 시작하고 싶다면
           </h2>

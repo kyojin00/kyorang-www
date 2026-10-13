@@ -19,10 +19,7 @@ export default function TemplatesPage() {
       <main className="page-top">
         <div className="wrap">
           <div className="sec-head reveal">
-            <span className="eyebrow">
-              <span className="dot" />
-              템플릿 상점
-            </span>
+            <p className="label">템플릿 상점</p>
             <h2>웹사이트 템플릿</h2>
             <p>
               구매 신청 → 계좌 입금 → 메일로 소스 코드와 설명서 전달. 설치나 수정이 어려우면 대행도

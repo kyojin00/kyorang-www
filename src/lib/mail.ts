@@ -34,28 +34,28 @@ export function mailHtml(title: string, sub: string, rows: [string, string][], b
     .map(
       ([k, v]) => `
       <tr>
-        <td style="padding:10px 0;border-bottom:1px solid #F2EAE0;font-size:13px;color:#B0A39E;width:96px;vertical-align:top;">${esc(k)}</td>
-        <td style="padding:10px 0;border-bottom:1px solid #F2EAE0;font-size:14px;color:#3A2A2E;font-weight:500;">${esc(v)}</td>
+        <td style="padding:10px 0;border-bottom:1px solid #EAE7E0;font-size:13px;color:#989CA3;width:96px;vertical-align:top;">${esc(k)}</td>
+        <td style="padding:10px 0;border-bottom:1px solid #EAE7E0;font-size:14px;color:#24272D;font-weight:500;">${esc(v)}</td>
       </tr>`
     )
     .join('')
   return `
-  <div style="font-family:'Pretendard','Noto Sans KR',sans-serif;max-width:600px;margin:0 auto;padding:40px 24px;background:#FBF5EC;">
-    <div style="background:linear-gradient(135deg,#2E2127,#3D2D33);border-radius:16px;padding:32px;margin-bottom:24px;text-align:center;">
+  <div style="font-family:'Pretendard','Noto Sans KR',sans-serif;max-width:600px;margin:0 auto;padding:40px 24px;background:#F5F3EE;">
+    <div style="background:#16181D;border-radius:8px;padding:32px;margin-bottom:24px;text-align:center;">
       <h1 style="color:#fff;font-size:22px;margin:0;">${esc(title)}</h1>
       <p style="color:rgba(255,255,255,.6);margin:8px 0 0;font-size:14px;">${esc(sub)}</p>
     </div>
-    <div style="background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;">
+    <div style="background:#fff;border-radius:8px;padding:24px;margin-bottom:16px;">
       <table style="width:100%;border-collapse:collapse;">${tr}</table>
     </div>
     ${
       body
-        ? `<div style="background:#fff;border-radius:16px;padding:24px;">
-             <p style="font-size:14px;color:#3A2A2E;line-height:1.8;margin:0;white-space:pre-wrap;">${esc(body)}</p>
+        ? `<div style="background:#fff;border-radius:8px;padding:24px;">
+             <p style="font-size:14px;color:#24272D;line-height:1.8;margin:0;white-space:pre-wrap;">${esc(body)}</p>
            </div>`
         : ''
     }
-    <p style="text-align:center;font-size:12px;color:#B0A39E;margin-top:24px;">© 2026 KYORANG · kyorang.com</p>
+    <p style="text-align:center;font-size:12px;color:#989CA3;margin-top:24px;">© 2026 KYORANG · kyorang.com</p>
   </div>`
 }
 

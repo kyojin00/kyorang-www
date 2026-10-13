@@ -6,7 +6,7 @@ export function TemplateThumb({ t }: { t: Template }) {
   return (
     <div
       className="tpl-thumb"
-      style={{ background: `linear-gradient(140deg, ${t.palette[0]}, ${t.palette[1]})` }}
+      style={{ background: t.color }}
       aria-hidden="true"
     >
       <div className="tpl-win">

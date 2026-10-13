@@ -84,7 +84,7 @@ export interface Template {
   features: string[]
   stack: string
   ready: boolean
-  palette: [string, string] // 미리보기 그림 색
+  color: string // 미리보기 배경색
 }
 
 export const TEMPLATES: Template[] = [
@@ -97,7 +97,7 @@ export const TEMPLATES: Template[] = [
     features: ['메뉴 섹션', '지도·영업시간', '인스타그램 연결', '모바일 우선 디자인'],
     stack: 'Next.js · Tailwind',
     ready: false,
-    palette: ['#EC8A6E', '#F5C96B'],
+    color: '#1F4D3A',
   },
   {
     slug: 'studio-portfolio',
@@ -108,7 +108,7 @@ export const TEMPLATES: Template[] = [
     features: ['작업물 갤러리', '프로젝트 상세', '견적 문의 폼', '다크 모드'],
     stack: 'Next.js · Tailwind',
     ready: false,
-    palette: ['#2E2127', '#D9573A'],
+    color: '#16181D',
   },
   {
     slug: 'company-basic',
@@ -119,44 +119,13 @@ export const TEMPLATES: Template[] = [
     features: ['5페이지 구성', '공지사항', '약관·개인정보 페이지', '문의 메일 발송'],
     stack: 'Next.js · Tailwind',
     ready: false,
-    palette: ['#3D2D33', '#F2B89E'],
+    color: '#C9A45C',
   },
 ]
 
 export const findTemplate = (slug: string) => TEMPLATES.find((t) => t.slug === slug)
 
 export const won = (n: number) => n.toLocaleString('ko-KR') + '원'
-
-// ── 직접 만든 서비스 (포트폴리오) ─────────────────
-export const WORKS = [
-  {
-    name: '교랑무드',
-    kind: 'Android 앱 · AI 상담',
-    desc: '기분 기록과 AI 캐릭터 "무디"와의 대화를 담은 감정 기록 앱.',
-  },
-  {
-    name: '교랑톡',
-    kind: 'Android 앱 · 메신저',
-    desc: '친구 목록·채팅·푸시 알림을 갖춘 메신저.',
-  },
-  {
-    name: '교랑빌리지',
-    kind: 'Android 앱 · 커뮤니티',
-    desc: '마을 단위 게시판·채팅·신고/차단까지 갖춘 커뮤니티.',
-  },
-  {
-    name: 'kyorang.com',
-    kind: '웹사이트',
-    desc: '지금 보고 계신 이 사이트. 문의·주문 메일 발송까지 직접 만들었어요.',
-  },
-]
-
-export const PROCESS = [
-  { t: '상담', d: '무엇을, 언제까지, 얼마에. 문의 폼이나 메일로 시작해요.' },
-  { t: '견적 · 계약', d: '범위와 수정 횟수를 정한 견적서를 드려요.' },
-  { t: '디자인 · 개발', d: '중간 시안을 공유하며 함께 다듬어요.' },
-  { t: '오픈 · 관리', d: '도메인 연결 후 오픈. 원하시면 유지보수로 이어가요.' },
-]
 
 export const INQUIRY_TYPES = [
   '웹사이트 제작 견적',

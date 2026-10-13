@@ -6,7 +6,6 @@ import { useState } from 'react'
 const LINKS = [
   { href: '/#packages', label: '제작 패키지' },
   { href: '/templates', label: '템플릿' },
-  { href: '/#works', label: '만든 것들' },
   { href: '/#faq', label: 'FAQ' },
 ]
 

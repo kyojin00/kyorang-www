@@ -6,10 +6,7 @@ export default function Packages() {
     <section className="block" id="packages">
       <div className="wrap">
         <div className="sec-head center reveal">
-          <span className="eyebrow">
-            <span className="dot" />
-            제작 패키지
-          </span>
+          <p className="label">제작 패키지</p>
           <h2>규모에 맞게 고르세요</h2>
           <p>모든 패키지는 반응형이고 소스 코드를 전부 드려요. 정확한 금액은 상담 후 견적서로 안내해요.</p>
         </div>
@@ -26,12 +23,7 @@ export default function Packages() {
               </div>
               <ul>
                 {p.includes.map((x) => (
-                  <li key={x}>
-                    <svg className="ico" viewBox="0 0 24 24">
-                      <path d="m5 12 5 5 9-10" />
-                    </svg>
-                    {x}
-                  </li>
+                  <li key={x}>{x}</li>
                 ))}
               </ul>
               <div className="pkg-period">기간 {p.period}</div>

@@ -6,7 +6,6 @@ import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Packages from '@/components/Packages'
 import Templates from '@/components/Templates'
-import Works from '@/components/Works'
 import Faq from '@/components/Faq'
 import Cta from '@/components/Cta'
 import Footer from '@/components/Footer'
@@ -32,14 +31,10 @@ export default async function HomePage({ searchParams }: PageProps) {
       <Hero />
       <Packages />
       <Templates />
-      <Works />
       <section className="block" id="faq">
         <div className="wrap narrow">
           <div className="sec-head center reveal">
-            <span className="eyebrow">
-              <span className="dot" />
-              FAQ
-            </span>
+            <p className="label">FAQ</p>
             <h2>자주 묻는 질문</h2>
           </div>
           <Faq />

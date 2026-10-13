@@ -35,7 +35,7 @@ export default function Splash() {
     const DISPLAY = 380 // 로고 표시 크기(px). 더 크게 원하면 이 숫자만 키우세요.
     const GRID = 58 // 가로 점 개수(촘촘함). 키우면 점이 작고 정밀해져요.
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
-    const colors = ['#EC8A6E', '#D9573A', '#F5C96B']
+    const colors = ['#1F4D3A', '#16181D', '#C9A45C']
 
     const MOVE = reduce ? 1 : 500 // 점 1개가 날아오는 시간
     const SPREAD = reduce ? 0 : 1300 // 점들 사이 시차(전체 채워지는 시간)
