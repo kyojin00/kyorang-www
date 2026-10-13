@@ -135,45 +135,6 @@ export const findTemplate = (slug: string) => TEMPLATES.find((t) => t.slug === s
 
 export const won = (n: number) => n.toLocaleString('ko-KR') + '원'
 
-// ── 포트폴리오 ──────────────────────────────────
-// 직접 만들었거나 고객 동의를 받은 작업만 올린다. image 는 public/ 아래 경로(예: '/works/cafe.png').
-export interface Work {
-  title: string
-  kind: string
-  desc: string
-  tags: string[]
-  link?: string
-  image?: string
-}
-
-export const PORTFOLIO: Work[] = [
-  {
-    title: 'kyorang.com',
-    kind: '웹사이트',
-    desc: '제작 의뢰·템플릿 판매 사이트. 견적 문의와 주문을 메일로 받는 기능까지 직접 만들었어요.',
-    tags: ['Next.js', '반응형', '문의·주문 메일'],
-    link: SITE_URL,
-  },
-  {
-    title: '교랑무드',
-    kind: 'Android 앱',
-    desc: '기분 기록과 AI 캐릭터와의 대화를 담은 감정 기록 앱.',
-    tags: ['Android', 'AI 상담', '구독 결제'],
-  },
-  {
-    title: '교랑톡',
-    kind: 'Android 앱',
-    desc: '친구 목록·채팅·푸시 알림을 갖춘 메신저.',
-    tags: ['Android', '실시간 채팅', '푸시 알림'],
-  },
-  {
-    title: '교랑빌리지',
-    kind: 'Android 앱',
-    desc: '마을 단위 게시판·채팅과 신고·차단 기능을 갖춘 커뮤니티.',
-    tags: ['Android', '커뮤니티', '휴대폰 인증'],
-  },
-]
-
 // ── 고객 후기 ──────────────────────────────────
 // 실제로 받은 후기만, 고객 동의를 받고 올린다. 지어낸 후기는 표시광고법 위반이다.
 // 비어 있으면 사이트에 후기 섹션이 나오지 않는다.
