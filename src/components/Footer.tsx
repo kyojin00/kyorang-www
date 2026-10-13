@@ -14,14 +14,14 @@ export default function Footer() {
               <span className="brand-name">KYORANG</span>
             </div>
             <p>
-              필요한 만큼만, 제대로 만든 웹사이트.
+              웹사이트 · 업무 프로그램 · 앱 제작
               <br />
               {CONTACT_EMAIL}
             </p>
           </div>
 
           <div className="ft-col">
-            <h5>웹 제작</h5>
+            <h5>제작</h5>
             <Link href="/#packages">제작 패키지</Link>
             <Link href="/templates">템플릿</Link>
             <Link href="/contact">견적 문의</Link>

@@ -27,7 +27,7 @@ export default function Packages() {
                 ))}
               </ul>
               <div className="pkg-period">기간 {p.period}</div>
-              <Link href={`/contact?type=${encodeURIComponent('웹사이트 제작 견적')}&pkg=${p.id}`} className={'btn ' + (p.featured ? 'btn-primary' : 'btn-ghost')}>
+              <Link href={`/contact?type=${encodeURIComponent(p.id === 'custom' ? '프로그램 · 앱 제작 견적' : '웹사이트 제작 견적')}&pkg=${p.id}`} className={'btn ' + (p.featured ? 'btn-primary' : 'btn-ghost')}>
                 이 패키지로 문의
               </Link>
             </div>

@@ -61,7 +61,7 @@ export default function ContactPage() {
     }
   }
 
-  const isBuild = form.type === '웹사이트 제작 견적'
+  const isBuild = form.type === '웹사이트 제작 견적' || form.type === '프로그램 · 앱 제작 견적'
 
   return (
     <>
@@ -143,7 +143,7 @@ export default function ContactPage() {
                     required
                     placeholder={
                       isBuild
-                        ? '어떤 사이트인가요? 참고하는 사이트 주소, 필요한 페이지·기능을 적어주시면 견적이 정확해져요.'
+                        ? '무엇을 만들고 싶으신가요? 지금 하는 방식(엑셀·수작업 등), 참고하는 사이트, 필요한 기능을 적어주시면 견적이 정확해져요.'
                         : '문의 내용을 입력해주세요'
                     }
                     value={form.message}

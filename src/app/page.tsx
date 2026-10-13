@@ -6,6 +6,7 @@ import SiteEffects from '@/components/SiteEffects'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Packages from '@/components/Packages'
+import Services from '@/components/Services'
 import Templates from '@/components/Templates'
 import CaseStudy from '@/components/CaseStudy'
 import Reviews from '@/components/Reviews'
@@ -72,6 +73,7 @@ export default async function HomePage({ searchParams }: PageProps) {
       <SiteEffects />
       <Nav />
       <Hero />
+      <Services />
       <Packages />
       <CaseStudy />
       <Templates />
