@@ -49,7 +49,7 @@ export default async function OgImage() {
           <div style={{ fontSize: 76, fontWeight: 800, letterSpacing: -2, lineHeight: 1.1, color: '#1F4D3A' }}>
             built right.
           </div>
-          <div style={{ fontSize: 32, color: '#5D626A', marginTop: 8 }}>Websites · Business software · Apps</div>
+          <div style={{ fontSize: 32, color: '#5D626A', marginTop: 8 }}>Automation · Business software · Websites · Apps</div>
         </div>
         <div style={{ display: 'flex', height: 10, width: 220, background: '#1F4D3A' }} />
       </div>

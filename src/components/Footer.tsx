@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="brand-name">KYORANG</span>
             </div>
             <p>
-              웹사이트 · 업무 프로그램 · 앱 제작
+              자동화 · 프로그램 · 웹사이트 · 앱 제작
               <br />
               {CONTACT_EMAIL}
             </p>

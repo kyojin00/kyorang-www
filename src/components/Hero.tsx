@@ -6,13 +6,13 @@ export default function Hero() {
         <div>
           <p className="label">KYORANG DEV STUDIO</p>
           <h1>
-            사이트도 프로그램도,
+            손으로 하던 일,
             <br />
-            <span className="grad">제대로</span> 만들어요
+            <span className="grad">자동으로</span> 바꿔드려요
           </h1>
           <p className="lead">
-            홈페이지, 예약·관리자 기능이 있는 웹서비스, 업무 자동화 프로그램, 앱까지.
-            기획부터 개발, 오픈 뒤 운영까지 한 사람이 끝까지 맡아요.
+            반복 업무를 줄이는 자동화·매크로, 회사에 꼭 맞는 업무 프로그램, 홈페이지와 앱까지.
+            필요한 걸 말씀해 주시면 기획부터 운영까지 끝까지 맡아요.
           </p>
           <div className="hero-actions">
             <Link href="/contact" className="btn btn-primary">

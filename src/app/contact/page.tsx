@@ -61,7 +61,7 @@ export default function ContactPage() {
     }
   }
 
-  const isBuild = form.type === '웹사이트 제작 견적' || form.type === '프로그램 · 앱 제작 견적'
+  const isBuild = form.type === '웹사이트 제작 견적' || form.type === '프로그램 · 자동화 견적'
 
   return (
     <>
