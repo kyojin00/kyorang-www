@@ -51,7 +51,7 @@ export default async function QnaPage() {
               <li className="bd-empty">아직 질문이 없어요. 첫 질문을 남겨주세요.</li>
             ) : (
               questions.map((q) => (
-                <li key={q.id} className="bd-item">
+                <li key={q.id} id={`q-${q.id}`} className="bd-item">
                   <details>
                     <summary>
                       <span className={'bd-badge' + (q.answer ? ' done' : '')}>{q.answer ? '답변 완료' : '답변 대기'}</span>

@@ -52,7 +52,7 @@ export default async function ReviewsPage() {
               <li className="bd-empty">아직 게시된 후기가 없어요. 첫 후기를 남겨주세요.</li>
             ) : (
               reviews.map((r) => (
-                <li key={r.id} className="bd-item">
+                <li key={r.id} id={`r-${r.id}`} className="bd-item">
                   <div className="bd-head">
                     <span className="bd-stars-read" aria-label={`${r.rating}점`}>
                       {'★'.repeat(r.rating)}
