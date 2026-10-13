@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import Splash from '@/components/Splash'
@@ -11,6 +12,42 @@ import Reviews from '@/components/Reviews'
 import Faq from '@/components/Faq'
 import Cta from '@/components/Cta'
 import Footer from '@/components/Footer'
+import { BUSINESS, CONTACT_EMAIL, SITE_URL } from '@/data/studio'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
+
+// 구글이 사이트 이름·회사 정보를 알아보도록 첫 화면에만 구조화 데이터를 넣는다.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: '교랑',
+      alternateName: ['KYORANG', 'kyorang.com'],
+      inLanguage: 'ko-KR',
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#org`,
+      name: BUSINESS.name,
+      alternateName: 'KYORANG',
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      email: CONTACT_EMAIL,
+      ...(BUSINESS.phone ? { telephone: BUSINESS.phone } : {}),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '무선7길 18-6, 202호',
+        addressLocality: '여수시',
+        addressCountry: 'KR',
+      },
+    },
+  ],
+}
 
 interface PageProps {
   searchParams: Promise<{ code?: string; type?: string }>
@@ -27,6 +64,10 @@ export default async function HomePage({ searchParams }: PageProps) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Splash />
       <SiteEffects />
       <Nav />

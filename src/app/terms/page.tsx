@@ -3,6 +3,8 @@ import LegalPage from '@/components/LegalPage'
 
 export const metadata: Metadata = {
   title: '이용약관 — 교랑(KYORANG)',
+  description: '교랑(KYORANG) 서비스 이용약관입니다.',
+  alternates: { canonical: '/terms' },
 }
 
 export default function TermsPage() {

@@ -3,6 +3,8 @@ import LegalPage from '@/components/LegalPage'
 
 export const metadata: Metadata = {
   title: '개인정보처리방침 — 교랑(KYORANG)',
+  description: '교랑(KYORANG)이 수집하는 개인정보 항목, 이용 목적, 보관 기간과 위탁 현황을 안내합니다.',
+  alternates: { canonical: '/privacy' },
 }
 
 export default function PrivacyPage() {

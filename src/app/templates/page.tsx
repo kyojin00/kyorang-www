@@ -8,6 +8,7 @@ import { TEMPLATES } from '@/data/studio'
 
 export const metadata: Metadata = {
   title: '웹사이트 템플릿 — 교랑(KYORANG)',
+  alternates: { canonical: '/templates' },
   description: '문구와 사진만 바꾸면 바로 여는 웹사이트 템플릿. 소스 코드 전체와 설명서를 드려요.',
 }
 
@@ -20,7 +21,7 @@ export default function TemplatesPage() {
         <div className="wrap">
           <div className="sec-head reveal">
             <p className="label">템플릿 상점</p>
-            <h2>웹사이트 템플릿</h2>
+            <h1>웹사이트 템플릿</h1>
             <p>
               구매 신청 → 계좌 입금 → 메일로 소스 코드와 설명서 전달. 설치나 수정이 어려우면 대행도
               맡기실 수 있어요.

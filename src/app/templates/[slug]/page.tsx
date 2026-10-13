@@ -18,7 +18,11 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = findTemplate((await params).slug)
-  return t ? { title: `${t.name} 템플릿 — 교랑(KYORANG)`, description: t.summary } : {}
+  return t ? {
+        title: `${t.name} 템플릿 — 교랑(KYORANG)`,
+        description: t.summary,
+        alternates: { canonical: `/templates/${t.slug}` },
+      } : {}
 }
 
 export default async function TemplateDetail({ params }: Props) {

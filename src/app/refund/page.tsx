@@ -3,6 +3,8 @@ import LegalPage from '@/components/LegalPage'
 
 export const metadata: Metadata = {
   title: '환불 정책 — 교랑(KYORANG)',
+  description: '교랑(KYORANG) 웹사이트 템플릿과 제작 서비스의 청약철회·환불 기준을 안내합니다.',
+  alternates: { canonical: '/refund' },
 }
 
 export default function RefundPage() {
