@@ -35,7 +35,6 @@ export default function Footer() {
             <h5>교랑 앱</h5>
             <span>교랑톡</span>
             <span>교랑무드</span>
-            <span>교랑빌리지</span>
           </div>
         </div>
 
