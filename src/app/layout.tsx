@@ -2,9 +2,18 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: '교랑 (KYORANG) — 마음을 잇는 기술',
+  metadataBase: new URL('https://kyorang.com'),
+  title: '교랑 (KYORANG) — 웹사이트 제작 · 템플릿',
   description:
-    '교랑은 상담부터 소통, 기록까지 — 사람과 사람의 마음을 따뜻하게 연결하는 서비스를 만듭니다.',
+    '원페이지 랜딩부터 예약·관리자 기능이 있는 웹서비스까지. 맞춤 제작과 바로 쓰는 웹사이트 템플릿을 판매합니다.',
+  openGraph: {
+    title: '교랑 (KYORANG) — 웹사이트 제작 · 템플릿',
+    description: '필요한 만큼만, 제대로 만든 웹사이트.',
+    url: 'https://kyorang.com',
+    siteName: 'KYORANG',
+    locale: 'ko_KR',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({

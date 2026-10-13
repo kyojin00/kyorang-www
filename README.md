@@ -1,12 +1,31 @@
 # kyorang-www (kyorang.com)
 
-> 교랑(Kyorang) 회사 소개 웹사이트
-
-kyorang-www는 교랑의 공식 회사 소개 사이트입니다. 회사 소개, 비전, 그리고 교랑이 만드는 앱·서비스(교랑 패밀리)를 방문자에게 전달하는 것을 목적으로 합니다.
+> 교랑(Kyorang) 웹 스튜디오 — 웹사이트 맞춤 제작 · 템플릿 판매
 
 - **도메인**: [kyorang.com](https://kyorang.com)
-- **성격**: 회사 소개 사이트 (Corporate / Landing)
 - **배포**: Vercel
+
+### 무엇을 고치려면
+
+| 바꿀 것 | 파일 |
+|---|---|
+| 제작 패키지 가격·구성, 템플릿 상품, FAQ, 포트폴리오, 사업자 정보 | `src/data/studio.ts` |
+| 템플릿 판매 시작 | `src/data/studio.ts` 에서 해당 템플릿 `ready: true` |
+| 문의 메일 | `src/app/api/contact/route.ts` |
+| 주문 메일 (계좌이체) | `src/app/api/order/route.ts` |
+| 환불 정책 | `src/app/refund/page.tsx` |
+
+### 주문 흐름 (템플릿)
+
+1. 손님이 `/templates/<slug>` 에서 구매 신청 → 주문 메일이 `GMAIL_USER` 로 오고, 손님에게는 입금 안내 메일이 간다.
+2. 입금을 확인하면 손님 메일로 템플릿 파일(zip)과 설명서를 직접 보낸다.
+3. 주문은 DB 없이 메일로만 남는다. 주문이 많아지면 Supabase 테이블로 옮긴다.
+
+### 앱 관련 페이지 (지우지 말 것)
+
+스토어 심사·앱 인증에 연결된 주소라 그대로 둔다:
+`/privacy`, `/terms`, `/youth`, `/mood/delete-account`, `/village/delete-account`,
+`/village/child-safety`, `/confirmed`, 그리고 `/?code=...` → `/confirmed` 리다이렉트.
 
 ---
 
@@ -114,9 +133,13 @@ npm run dev
 
 ## 환경 변수
 
-문의 폼 등 Supabase를 사용하는 경우에만 필요합니다. 루트에 `.env.local`을 생성합니다.
+Vercel 프로젝트 설정(또는 로컬 `.env.local`)에 넣습니다.
 
 ```bash
+GMAIL_USER=<문의·주문 메일을 받을 Gmail 주소>
+GMAIL_APP_PASSWORD=<Gmail 앱 비밀번호>
+# 템플릿 주문 안내 메일·완료 화면에 보여줄 입금 계좌. 비우면 "계좌는 메일로 안내" 로 나온다.
+BANK_ACCOUNT="은행 계좌번호 (예금주 이름)"
 NEXT_PUBLIC_SUPABASE_URL=<your-supabase-url>
 NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
 ```

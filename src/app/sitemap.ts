@@ -1,30 +1,22 @@
 import { MetadataRoute } from 'next'
+import { TEMPLATES } from '@/data/studio'
+
+const BASE = 'https://kyorang.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date()
   return [
-    {
-      url: 'https://kyorang.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: 'https://kyorang.com/#services',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+    { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    { url: `${BASE}/templates`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    ...TEMPLATES.map((t) => ({
+      url: `${BASE}/templates/${t.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
-    },
-    {
-      url: 'https://kyorang.com/#mission',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://kyorang.com/#contact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
+    })),
+    { url: `${BASE}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/refund`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
 }
