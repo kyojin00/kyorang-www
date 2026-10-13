@@ -68,3 +68,14 @@ export async function deleteQuestion(f: FormData) {
   await adminFetch(`www_questions?id=eq.${id(f)}`, { method: 'DELETE' })
   refresh()
 }
+
+export async function setCouponUsed(f: FormData) {
+  await guard()
+  const code = String(f.get('code') ?? '')
+  if (!/^\d{12}$/.test(code)) throw new Error('잘못된 쿠폰번호')
+  await adminFetch(`www_coupons?code=eq.${code}`, {
+    method: 'PATCH',
+    body: { used_at: f.get('used') === 'true' ? new Date().toISOString() : null },
+  })
+  revalidatePath('/admin')
+}

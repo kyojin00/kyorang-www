@@ -3,32 +3,48 @@ import { redirect } from 'next/navigation'
 import { adminFetch, hasDbKey, isAdmin, type AdminQuestion, type AdminReview } from '@/lib/admin'
 import { ymd } from '@/lib/board'
 import ConfirmButton from '@/components/ConfirmButton'
-import { answerQuestion, deleteQuestion, deleteReview, setQuestionHidden, setReviewApproved } from './actions'
+import { answerQuestion, deleteQuestion, deleteReview, setCouponUsed, setQuestionHidden, setReviewApproved } from './actions'
+
+interface AdminCoupon {
+  code: string
+  claimed_name: string | null
+  claimed_email: string | null
+  claimed_at: string | null
+  used_at: string | null
+}
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: '관리자 — 교랑', robots: { index: false, follow: false } }
 
 export default async function AdminPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
   if (!(await isAdmin())) redirect('/admin/login')
-  const tab = (await searchParams).tab === 'qna' ? 'qna' : 'reviews'
+  const q = (await searchParams).tab
+  const tab = q === 'qna' || q === 'coupons' ? q : 'reviews'
 
   let reviews: AdminReview[] = []
   let questions: AdminQuestion[] = []
+  let coupons: AdminCoupon[] = []
+  let couponTotal = 0
   let error = ''
   if (!hasDbKey()) {
     error = 'Vercel 환경 변수에 SUPABASE_SECRET_KEY 가 없어요. 등록 후 재배포해 주세요.'
   } else {
     try {
-      ;[reviews, questions] = await Promise.all([
+      let all: AdminCoupon[]
+      ;[reviews, questions, all] = await Promise.all([
         adminFetch('www_reviews?select=*&order=approved.asc,created_at.desc&limit=200') as Promise<AdminReview[]>,
         adminFetch('www_questions?select=*&order=created_at.desc&limit=200') as Promise<AdminQuestion[]>,
+        adminFetch('www_coupons?select=code,claimed_name,claimed_email,claimed_at,used_at&order=claimed_at.desc.nullslast&limit=1000') as Promise<AdminCoupon[]>,
       ])
+      couponTotal = all.length
+      coupons = all.filter((c) => c.claimed_email)
     } catch (e) {
       error = `DB 읽기 실패: ${e instanceof Error ? e.message : String(e)}`
     }
   }
   const pendingReviews = reviews.filter((r) => !r.approved).length
   const openQuestions = questions.filter((q) => !q.answer && !q.hidden).length
+  const unusedCoupons = coupons.filter((c) => !c.used_at).length
 
   return (
     <main className="adm">
@@ -40,6 +56,9 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           </a>
           <a href="/admin?tab=qna" className={tab === 'qna' ? 'on' : ''}>
             Q&amp;A {openQuestions ? <em>{openQuestions}</em> : null}
+          </a>
+          <a href="/admin?tab=coupons" className={tab === 'coupons' ? 'on' : ''}>
+            쿠폰 {unusedCoupons ? <em>{unusedCoupons}</em> : null}
           </a>
         </div>
         <form method="post" action="/api/admin/logout">
@@ -71,6 +90,31 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
                 <form action={deleteReview}>
                   <input type="hidden" name="id" value={r.id} />
                   <ConfirmButton className="adm-del" message="이 글을 삭제할까요? 되돌릴 수 없어요.">삭제</ConfirmButton>
+                </form>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : tab === 'coupons' ? (
+        <ul className="adm-list">
+          <li className="bd-meta" style={{ padding: '18px 0' }}>
+            전체 {couponTotal}장 · 문의에 쓰인 {coupons.length}장 · 남은 {couponTotal - coupons.length}장. 결제까지 끝나면 &lsquo;사용 처리&rsquo;를 눌러 주세요.
+          </li>
+          {coupons.length === 0 && !error ? <li className="bd-empty">아직 문의에 쓰인 쿠폰이 없어요.</li> : null}
+          {coupons.map((c) => (
+            <li key={c.code} className={'adm-item' + (c.used_at ? '' : ' wait')}>
+              <div className="adm-head">
+                <span className={'bd-badge' + (c.used_at ? ' done' : '')}>{c.used_at ? `사용 ${ymd(c.used_at)}` : '할인 대기'}</span>
+                <b>{c.code}</b>
+                <span className="bd-meta">
+                  {c.claimed_name} · {c.claimed_email} · {c.claimed_at ? ymd(c.claimed_at) : ''}
+                </span>
+              </div>
+              <div className="adm-actions">
+                <form action={setCouponUsed}>
+                  <input type="hidden" name="code" value={c.code} />
+                  <input type="hidden" name="used" value={c.used_at ? 'false' : 'true'} />
+                  <button className={'btn ' + (c.used_at ? 'btn-ghost' : 'btn-primary')}>{c.used_at ? '사용 취소' : '사용 처리'}</button>
                 </form>
               </div>
             </li>
