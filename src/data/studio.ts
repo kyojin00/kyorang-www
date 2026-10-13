@@ -69,7 +69,7 @@ export const PACKAGES: Package[] = [
 ]
 
 export const MAINTENANCE = {
-  price: '월 5만원~',
+  price: '월 3만원',
   desc: '문구·이미지 수정, 오류 대응, 서버·도메인 관리를 맡아드려요.',
 }
 
