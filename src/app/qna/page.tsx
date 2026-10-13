@@ -33,6 +33,7 @@ export default async function QnaPage() {
           </div>
 
           <BoardForm
+            event="질문 작성"
             endpoint="/api/questions"
             open="질문하기"
             done="질문이 등록됐어요. 답변이 달리면 이 페이지에서 확인할 수 있어요."
