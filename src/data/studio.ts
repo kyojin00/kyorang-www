@@ -16,6 +16,8 @@ export const BUSINESS = {
   address: '전남광주통합특별시 여수시 무선7길 18-6, 202호',
   phone: '', // 대표 전화 — 비우면 표시 안 함. 통신판매업자는 표시해야 하니 꼭 채우기
   hosting: 'Vercel Inc.',
+  // 카카오톡 채널 채팅 주소 (예: 'https://pf.kakao.com/_xxxxx/chat'). 비우면 상담 버튼이 안 보인다.
+  kakao: '',
 }
 
 // ── 만드는 것 ─────────────────────────────────
