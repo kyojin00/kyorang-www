@@ -74,7 +74,7 @@ export default function ContactPage() {
           <div className="sec-head center">
             <h1>문의하기</h1>
             <p>
-              제작 견적, 템플릿, 교랑 앱 문의 모두 여기서 받아요.
+              제작 견적, 템플릿, 유지보수 문의 모두 여기서 받아요.
               <br />
               보통 영업일 기준 1~2일 안에 메일로 답변드려요.
             </p>
