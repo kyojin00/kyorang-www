@@ -30,11 +30,6 @@ export default function Footer() {
             <Link href="/qna">Q&amp;A</Link>
             <Link href="/contact">견적 문의</Link>
           </div>
-
-          <div className="ft-col">
-            <h5>교랑 앱</h5>
-            <span>교랑톡</span>
-          </div>
         </div>
 
         <div className="ft-info">
@@ -51,7 +46,6 @@ export default function Footer() {
             개인정보처리방침
           </Link>
           <Link href="/refund">환불 정책</Link>
-          <Link href="/youth">청소년보호정책</Link>
         </div>
 
         <div className="ft-bottom">
