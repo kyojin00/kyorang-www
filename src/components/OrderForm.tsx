@@ -81,8 +81,8 @@ export default function OrderForm({ slug, price }: { slug: string; price: number
         <input className="hf-input" value={form.depositor} onChange={set('depositor')} />
       </div>
       <div className="hf-field">
-        <label>현금영수증 · 세금계산서 (필요하면)</label>
-        <input className="hf-input" value={form.receipt} onChange={set('receipt')} placeholder="휴대폰 번호 또는 사업자번호" />
+        <label>현금영수증 (필요하면)</label>
+        <input className="hf-input" value={form.receipt} onChange={set('receipt')} placeholder="휴대폰 번호 또는 사업자번호 (지출증빙)" />
       </div>
       <div className="hf-field">
         <label>요청사항</label>

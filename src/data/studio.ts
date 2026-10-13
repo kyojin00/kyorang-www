@@ -3,11 +3,15 @@
 
 export const CONTACT_EMAIL = 'rywls123450@gmail.com'
 
+// 전자상거래법상 사이트에 밝혀야 하는 사업자 정보 (사업자등록증 기준)
 export const BUSINESS = {
-  name: '교랑(KYORANG)',
-  ceo: '교진',
+  name: '교랑',
+  ceo: '황교진',
   bizNo: '832-01-02741',
   mailOrderNo: '2023-마산합포-0234',
+  address: '전남광주통합특별시 여수시 무선7길 18-6, 202호',
+  phone: '', // 대표 전화 — 비우면 표시 안 함. 통신판매업자는 표시해야 하니 꼭 채우기
+  hosting: 'Vercel Inc.',
 }
 
 // ── 맞춤 제작 패키지 ──────────────────────────────
@@ -127,6 +131,57 @@ export const findTemplate = (slug: string) => TEMPLATES.find((t) => t.slug === s
 
 export const won = (n: number) => n.toLocaleString('ko-KR') + '원'
 
+// ── 포트폴리오 ──────────────────────────────────
+// 직접 만들었거나 고객 동의를 받은 작업만 올린다. image 는 public/ 아래 경로(예: '/works/cafe.png').
+export interface Work {
+  title: string
+  kind: string
+  desc: string
+  tags: string[]
+  link?: string
+  image?: string
+}
+
+export const PORTFOLIO: Work[] = [
+  {
+    title: 'kyorang.com',
+    kind: '웹사이트',
+    desc: '제작 의뢰·템플릿 판매 사이트. 견적 문의와 주문을 메일로 받는 기능까지 직접 만들었어요.',
+    tags: ['Next.js', '반응형', '문의·주문 메일'],
+    link: 'https://kyorang.com',
+  },
+  {
+    title: '교랑무드',
+    kind: 'Android 앱',
+    desc: '기분 기록과 AI 캐릭터와의 대화를 담은 감정 기록 앱.',
+    tags: ['Android', 'AI 상담', '구독 결제'],
+  },
+  {
+    title: '교랑톡',
+    kind: 'Android 앱',
+    desc: '친구 목록·채팅·푸시 알림을 갖춘 메신저.',
+    tags: ['Android', '실시간 채팅', '푸시 알림'],
+  },
+  {
+    title: '교랑빌리지',
+    kind: 'Android 앱',
+    desc: '마을 단위 게시판·채팅과 신고·차단 기능을 갖춘 커뮤니티.',
+    tags: ['Android', '커뮤니티', '휴대폰 인증'],
+  },
+]
+
+// ── 고객 후기 ──────────────────────────────────
+// 실제로 받은 후기만, 고객 동의를 받고 올린다. 지어낸 후기는 표시광고법 위반이다.
+// 비어 있으면 사이트에 후기 섹션이 나오지 않는다.
+export interface Review {
+  name: string // 예: '김○○ 님' 처럼 일부 가림
+  project: string // 예: '카페 랜딩 페이지'
+  text: string
+  date: string // 예: '2026.11'
+}
+
+export const REVIEWS: Review[] = []
+
 export const INQUIRY_TYPES = [
   '웹사이트 제작 견적',
   '템플릿 문의',
@@ -144,7 +199,7 @@ export const FAQS = [
   },
   {
     q: '결제는 어떻게 하나요?',
-    a: '50만원 미만 제작은 오픈 시 한 번에 계좌이체로 받아요. 50만원 이상은 계약 시 착수금 50%, 오픈 시 잔금 50%로 나눠 받아요. 템플릿은 구매 신청 후 안내드리는 계좌로 입금하시면 확인 후 메일로 파일을 보내드려요. 세금계산서·현금영수증 발행 가능해요.',
+    a: '50만원 미만 제작은 오픈 시 한 번에 계좌이체로 받아요. 50만원 이상은 계약 시 착수금 50%, 오픈 시 잔금 50%로 나눠 받아요. 템플릿은 구매 신청 후 안내드리는 계좌로 입금하시면 확인 후 메일로 파일을 보내드려요. 현금영수증 발행 가능해요. 세금계산서가 필요하면 미리 말씀해 주세요.',
   },
   {
     q: '수정은 몇 번까지 되나요?',
