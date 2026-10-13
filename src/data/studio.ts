@@ -26,7 +26,7 @@ export const PACKAGES: Package[] = [
   {
     id: 'landing',
     name: '원페이지 랜딩',
-    price: '50만원~',
+    price: '10만원',
     note: 'VAT 별도',
     desc: '가게·이벤트·앱 소개처럼 한 화면으로 충분한 경우.',
     includes: [
@@ -40,8 +40,8 @@ export const PACKAGES: Package[] = [
   {
     id: 'brand',
     name: '브랜드 홈페이지',
-    price: '150만원~',
-    note: 'VAT 별도',
+    price: '30만원~',
+    note: 'VAT 별도 · 견적에 따라 상이',
     desc: '회사·스튜디오·병원처럼 여러 페이지로 신뢰를 보여줘야 할 때.',
     includes: [
       '5~7페이지 (소개·서비스·포트폴리오·문의 등)',
