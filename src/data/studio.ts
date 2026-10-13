@@ -169,17 +169,6 @@ export const CASE_STUDY = {
   stack: ['Python', 'Flask', 'MySQL', 'Nginx · Gunicorn', 'Linux 서버 직접 운영', 'AI API'],
 }
 
-// ── 고객 후기 ──────────────────────────────────
-// 실제로 받은 후기만, 고객 동의를 받고 올린다. 지어낸 후기는 표시광고법 위반이다.
-// 비어 있으면 사이트에 후기 섹션이 나오지 않는다.
-export interface Review {
-  name: string // 예: '김○○ 님' 처럼 일부 가림
-  project: string // 예: '카페 랜딩 페이지'
-  text: string
-  date: string // 예: '2026.11'
-}
-
-export const REVIEWS: Review[] = []
 
 export const INQUIRY_TYPES = [
   '웹사이트 제작 견적',
