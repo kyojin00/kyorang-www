@@ -33,6 +33,7 @@ export default async function ReviewsPage() {
           </div>
 
           <BoardForm
+            event="후기 작성"
             endpoint="/api/reviews"
             open="후기 남기기"
             done="후기 고마워요! 작업 내역을 확인한 뒤 게시할게요."

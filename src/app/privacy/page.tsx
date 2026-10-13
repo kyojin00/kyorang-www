@@ -75,6 +75,13 @@ export default function PrivacyPage() {
               기기 정보, 접속 로그, 서비스 이용 기록, 푸시 알림 토큰(FCM)
             </td>
           </tr>
+          <tr>
+            <td>웹사이트 방문 통계</td>
+            <td>
+              방문한 페이지, 유입 경로, 기기·브라우저 종류, 국가 (쿠키 없이 익명으로 집계하며 개인을 식별하지
+              않음)
+            </td>
+          </tr>
         </tbody>
       </table>
 
@@ -151,7 +158,7 @@ export default function PrivacyPage() {
           </tr>
           <tr>
             <td>Vercel</td>
-            <td>웹사이트(kyorang.com) 호스팅</td>
+            <td>웹사이트(kyorang.com) 호스팅, 방문 통계(Web Analytics)</td>
           </tr>
         </tbody>
       </table>

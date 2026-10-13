@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { track } from '@vercel/analytics'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Faq from '@/components/Faq'
@@ -52,6 +53,7 @@ export default function ContactPage() {
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data.error || '발송 중 오류가 발생했어요')
+      track('문의 보냄', { type: form.type })
       setSent(true)
       setForm(empty)
     } catch (err) {

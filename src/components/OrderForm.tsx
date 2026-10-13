@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { track } from '@vercel/analytics'
 import { won } from '@/data/studio'
 
 type Done = { orderNo: string; bank: string | null; amount: number }
@@ -29,6 +30,7 @@ export default function OrderForm({ slug, price }: { slug: string; price: number
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data.error || '주문 접수 중 오류가 발생했어요')
+      track('템플릿 주문', { slug })
       setDone({ orderNo: data.orderNo, bank: data.bank, amount: data.amount ?? price })
     } catch (err) {
       setError(err instanceof Error ? err.message : '주문 접수 중 오류가 발생했어요')

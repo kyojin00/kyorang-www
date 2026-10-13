@@ -2,17 +2,20 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { track } from '@vercel/analytics'
 
 type Field = { key: string; label: string; type?: 'text' | 'email' | 'textarea' | 'rating'; placeholder?: string; required?: boolean; hint?: string }
 
 // 리뷰·질문 공용 작성 폼. 접혀 있다가 버튼을 누르면 열린다.
 export default function BoardForm({
+  event,
   endpoint,
   open: openLabel,
   fields,
   done,
   note,
 }: {
+  event: string // 전환 이벤트 이름 (Vercel Analytics)
   endpoint: string
   open: string
   fields: Field[]
@@ -40,6 +43,7 @@ export default function BoardForm({
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data.error || '저장 중 오류가 발생했어요')
+      track(event)
       setSent(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : '저장 중 오류가 발생했어요')

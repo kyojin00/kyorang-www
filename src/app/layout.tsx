@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { SITE_URL } from '@/data/studio'
+import SiteAnalytics from '@/components/SiteAnalytics'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: '교랑',
+  // 네이버 서치어드바이저 사이트 소유 확인
+  verification: { other: { 'naver-site-verification': '0bc760117c42da54896ae362aea0caa920994d7e' } },
   title: '교랑 (KYORANG) — 자동화 · 프로그램 · 웹사이트 제작',
   description:
     '업무 자동화·매크로, 맞춤 업무 프로그램, 홈페이지·앱을 만들어요. 바로 쓰는 웹사이트 템플릿도 판매해요.',
@@ -31,7 +34,10 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <SiteAnalytics />
+      </body>
     </html>
   )
 }
