@@ -9,6 +9,7 @@ const LINKS = [
   { href: '/templates', label: '템플릿' },
   { href: '/reviews', label: '후기' },
   { href: '/qna', label: 'Q&A' },
+  { href: '/blog', label: '블로그' },
 ]
 
 export default function Nav() {

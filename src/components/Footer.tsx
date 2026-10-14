@@ -28,6 +28,7 @@ export default function Footer() {
             <Link href="/templates">템플릿</Link>
             <Link href="/reviews">고객 후기</Link>
             <Link href="/qna">Q&amp;A</Link>
+            <Link href="/blog">블로그</Link>
             <Link href="/contact">견적 문의</Link>
           </div>
         </div>
@@ -37,7 +38,7 @@ export default function Footer() {
           <br />
           통신판매업 신고번호 {BUSINESS.mailOrderNo} &nbsp;|&nbsp; 주소 {BUSINESS.address}
           <br />
-          {BUSINESS.phone ? <>전화 {BUSINESS.phone} &nbsp;|&nbsp; </> : null}이메일 {CONTACT_EMAIL} &nbsp;|&nbsp; 호스팅 {BUSINESS.hosting}
+          {BUSINESS.phone ? <>전화 <a href={`tel:${BUSINESS.phone}`}>{BUSINESS.phone}</a> &nbsp;|&nbsp; </> : null}이메일 {CONTACT_EMAIL} &nbsp;|&nbsp; 호스팅 {BUSINESS.hosting}
         </div>
 
         <div className="ft-legal">
