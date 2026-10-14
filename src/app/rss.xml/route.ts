@@ -1,5 +1,6 @@
 import { PACKAGES, SERVICES, SITE_URL, TEMPLATES, won } from '@/data/studio'
 import { listQuestions, listReviews, maskName } from '@/lib/board'
+import { POSTS } from '@/data/posts'
 
 // 네이버 서치어드바이저 RSS 제출용. 답변이 달린 Q&A·공개된 후기와 기본 소개 글을 싣는다.
 // 답변 없는 질문은 내용이 얇아 넣지 않는다.
@@ -15,6 +16,13 @@ type Item = { title: string; link: string; guid: string; description: string; da
 // Q&A·후기가 하나도 없어도 피드가 비지 않도록 늘 들어가는 기본 글 (네이버는 빈 RSS 를 받지 않는다).
 const LAUNCH = '2026-10-13T00:00:00+09:00'
 const BASIC: Item[] = [
+  ...POSTS.map((p) => ({
+    title: p.title,
+    link: `${SITE_URL}/blog/${p.slug}`,
+    guid: `${SITE_URL}/blog/${p.slug}`,
+    description: [p.description, ...p.body.map((b) => ('p' in b ? b.p : 'h' in b ? b.h : 'tip' in b ? b.tip : b.ul.join(', ')))].join('\n'),
+    date: `${p.date}T09:00:00+09:00`,
+  })),
   {
     title: '교랑 — 업무 자동화·맞춤 프로그램·웹사이트 제작',
     link: SITE_URL,

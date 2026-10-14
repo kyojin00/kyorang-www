@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { SITE_URL as BASE, TEMPLATES } from '@/data/studio'
+import { POSTS } from '@/data/posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    })),
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    ...POSTS.map((p) => ({
+      url: `${BASE}/blog/${p.slug}`,
+      lastModified: new Date(p.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     })),
     { url: `${BASE}/reviews`, lastModified: now, changeFrequency: 'daily', priority: 0.7 },
     { url: `${BASE}/qna`, lastModified: now, changeFrequency: 'daily', priority: 0.7 },
