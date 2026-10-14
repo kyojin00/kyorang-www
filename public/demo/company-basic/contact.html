@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문의하기 — 새벽산업</title>
+<meta name="description" content="설비 제작·배관·유지보수 견적 문의를 받습니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="header"></header>
+
+<section class="page-head"><div class="wrap"><p class="kicker">CONTACT</p><h1>문의하기</h1><p>영업일 기준 이틀 안에 담당자가 연락드려요.</p></div></section>
+<section class="sec">
+  <div class="wrap contact-grid">
+    <ul class="info-list">
+      <li><span>전화</span><b data-site="phone"></b></li>
+      <li><span>이메일</span><b data-site="email"></b></li>
+      <li><span>주소</span><b data-site="address"></b></li>
+      <li><span>상담 시간</span><b>평일 08:30 – 17:30</b></li>
+    </ul>
+    <!--
+      ✏️ 문의 메일 받기: https://formspree.io 에서 무료 폼을 만들고
+         action 주소를 받은 주소로 바꾸면 문의가 메일로 와요.
+    -->
+    <form class="form" action="https://formspree.io/f/your-form-id" method="POST">
+      <div class="row">
+        <label>회사명<input name="company" placeholder="(주)○○"></label>
+        <label>담당자<input name="name" required placeholder="홍길동"></label>
+      </div>
+      <div class="row">
+        <label>연락처<input name="phone" required placeholder="010-0000-0000"></label>
+        <label>이메일<input name="email" type="email" placeholder="name@company.com"></label>
+      </div>
+      <label>문의 분야<select name="type"><option>설비 제작</option><option>배관 · 플랜트</option><option>유지보수</option><option>기타</option></select></label>
+      <label>내용<textarea name="message" rows="6" required placeholder="설비 종류, 일정, 현장 위치 등을 적어주세요"></textarea></label>
+      <label class="agree"><input type="checkbox" required> <span><a href="privacy.html" style="text-decoration:underline">개인정보 수집·이용</a>에 동의합니다</span></label>
+      <button class="btn" type="submit">문의 보내기</button>
+    </form>
+  </div>
+</section>
+<footer id="footer"></footer>
+<script src="site.js"></script>
+</body>
+</html>

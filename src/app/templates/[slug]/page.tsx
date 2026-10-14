@@ -40,6 +40,11 @@ export default async function TemplateDetail({ params }: Props) {
               ← 템플릿 목록
             </Link>
             <TemplateThumb t={t} />
+            {t.demo ? (
+              <a className="btn btn-ghost td-demo" href={t.demo} target="_blank" rel="noopener">
+                데모 사이트 열어보기 ↗
+              </a>
+            ) : null}
             <h1>{t.name}</h1>
             <p className="td-summary">{t.summary}</p>
             <h2>포함된 것</h2>
@@ -47,10 +52,10 @@ export default async function TemplateDetail({ params }: Props) {
               {t.features.map((f) => (
                 <li key={f}>{f}</li>
               ))}
-              <li>소스 코드 전체 · 설치 설명서</li>
+              <li>소스 코드 전체 · 고치는 방법 설명서</li>
             </ul>
             <h2>기술</h2>
-            <p className="td-text">{t.stack} · Vercel 무료 호스팅에 바로 올릴 수 있어요.</p>
+            <p className="td-text">{t.stack} · 파일을 Vercel·Netlify 무료 호스팅에 올리면 바로 열려요. 고칠 곳에는 ✏️ 표시를 해 뒀어요.</p>
           </div>
 
           <aside className="td-buy">

@@ -104,6 +104,8 @@ export interface Template {
   stack: string
   ready: boolean
   color: string // 미리보기 배경색
+  demo?: string // 데모 주소 (public/demo/<slug>/)
+  thumb?: string // 미리보기 이미지 (public/tpl/)
 }
 
 export const TEMPLATES: Template[] = [
@@ -112,33 +114,39 @@ export const TEMPLATES: Template[] = [
     name: '카페 · 매장 랜딩',
     category: '원페이지',
     price: 49000,
-    summary: '메뉴·위치·영업시간·예약 링크를 한 화면에. 동네 가게용.',
-    features: ['메뉴 섹션', '지도·영업시간', '인스타그램 연결', '모바일 우선 디자인'],
-    stack: 'Next.js · Tailwind',
-    ready: false,
+    summary: '메뉴·영업시간·지도·예약 버튼을 한 화면에. 휴대폰 하단 고정 버튼까지 들어간 동네 가게용.',
+    features: ['탭으로 나뉜 메뉴판', '영업시간·지도·길찾기 버튼', '인스타그램·예약 링크', '휴대폰 하단 전화·길찾기·예약 버튼'],
+    stack: 'HTML · CSS · JS (설치 없이 바로 사용)',
+    ready: true,
     color: '#1F4D3A',
+    demo: '/demo/cafe-landing/index.html',
+    thumb: '/tpl/cafe-landing.webp',
   },
   {
     slug: 'studio-portfolio',
     name: '스튜디오 포트폴리오',
     category: '포트폴리오',
     price: 59000,
-    summary: '사진·디자인·인테리어 작업물을 크게 보여주는 갤러리형.',
-    features: ['작업물 갤러리', '프로젝트 상세', '견적 문의 폼', '다크 모드'],
-    stack: 'Next.js · Tailwind',
-    ready: false,
+    summary: '사진·디자인·인테리어 작업물을 크게 보여주는 갤러리형. 다크 모드와 작업 상세 창 포함.',
+    features: ['카테고리 필터 갤러리', '작업 상세 보기 창', '가격표', '견적 문의 폼', '밝게/어둡게 전환'],
+    stack: 'HTML · CSS · JS (설치 없이 바로 사용)',
+    ready: true,
     color: '#16181D',
+    demo: '/demo/studio-portfolio/index.html',
+    thumb: '/tpl/studio-portfolio.webp',
   },
   {
     slug: 'company-basic',
     name: '소기업 홈페이지',
     category: '기업형',
     price: 89000,
-    summary: '회사소개·서비스·공지·문의를 갖춘 기본 기업 사이트.',
-    features: ['5페이지 구성', '공지사항', '약관·개인정보 페이지', '문의 메일 발송'],
-    stack: 'Next.js · Tailwind',
-    ready: false,
+    summary: '회사소개·사업분야·공지·문의를 갖춘 기본 기업 사이트. 회사 정보는 파일 하나만 고치면 전 페이지에 반영.',
+    features: ['5페이지 (홈·회사소개·사업분야·공지·문의)', '이용약관·개인정보처리방침 페이지', '문의 폼 → 메일 수신', '휴대폰 메뉴'],
+    stack: 'HTML · CSS · JS (설치 없이 바로 사용)',
+    ready: true,
     color: '#C9A45C',
+    demo: '/demo/company-basic/index.html',
+    thumb: '/tpl/company-basic.webp',
   },
 ]
 
