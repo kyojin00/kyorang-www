@@ -1,0 +1,95 @@
+/* ✏️ 색은 여기 다섯 줄만 바꾸면 사이트 전체에 적용돼요 */
+:root{
+  --cream:#FBF6EE;
+  --cream-2:#F1E6D6;
+  --brown:#7A4E2D;
+  --brown-deep:#4A2E1A;
+  --ink:#2A1E16;
+  --muted:#8A7766;
+  --line:#E6D8C5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--cream);color:var(--ink);letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;background:rgba(251,246,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{font-size:20px;font-weight:800;letter-spacing:-.03em}
+.logo b{color:var(--brown)}
+.top nav{display:flex;gap:28px;font-size:15px;font-weight:600;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+
+.kicker{font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--brown)}
+h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.03em;margin-top:10px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;font-size:15px;font-weight:700;border:1.5px solid var(--brown-deep);transition:.2s}
+.btn.primary{background:var(--brown-deep);color:var(--cream)}
+.btn:hover{transform:translateY(-1px)}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:80px 6vw 60px;max-width:1200px;margin:0 auto}
+.hero h1{font-size:clamp(34px,5.2vw,60px);font-weight:800;line-height:1.18;letter-spacing:-.04em;margin:18px 0}
+.lead{font-size:18px;line-height:1.7;color:var(--muted)}
+.hero-art svg{width:100%;max-width:420px;margin:0 auto;display:block}
+
+.info-bar{display:grid;grid-template-columns:repeat(3,1fr);max-width:1200px;margin:0 auto 20px;padding:0 6vw}
+.info-bar div{padding:22px 0;border-top:1.5px solid var(--ink);display:flex;flex-direction:column;gap:4px}
+.info-bar div + div{padding-left:24px}
+.info-bar span{font-size:13px;color:var(--muted);font-weight:600}
+.info-bar b{font-size:17px}
+
+.menu{max-width:860px;margin:0 auto;padding:90px 6vw}
+.head{text-align:center}
+.tabs{display:flex;justify-content:center;gap:8px;margin:32px 0 20px}
+.tabs button{font:inherit;font-size:15px;font-weight:700;padding:10px 20px;border-radius:999px;border:1.5px solid var(--line);background:none;color:var(--muted);cursor:pointer}
+.tabs button.on{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.menu-list{list-style:none;display:none}
+.menu-list.on{display:block}
+.menu-list li{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:22px 4px;border-bottom:1px dashed var(--line)}
+.menu-list b{font-size:18px}
+.menu-list span{display:block;font-size:14px;color:var(--muted);margin-top:4px}
+.menu-list em{font-style:normal;font-weight:800;font-size:17px;white-space:nowrap}
+.menu-list li.best b::after{content:'BEST';font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--cream);background:var(--brown);border-radius:4px;padding:3px 6px;margin-left:8px;vertical-align:3px}
+
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1200px;margin:0 auto;padding:60px 6vw 100px}
+.story-art{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:180px 180px;gap:12px}
+/* ✏️ 아래 tile 배경을 사진으로 바꾸려면: background:url(사진.jpg) center/cover; */
+.tile{border-radius:18px;position:relative;overflow:hidden}
+.tile span{position:absolute;left:14px;bottom:12px;font-size:13px;font-weight:700;color:var(--cream);opacity:.9}
+.t1{grid-row:span 2;background:radial-gradient(circle at 30% 30%,#A9714A,var(--brown-deep))}
+.t2{background:linear-gradient(160deg,#9CC3D5,#4E7F96)}
+.t3{background:radial-gradient(circle at 60% 40%,#E9C48E,#B98545)}
+.story-text p:not(.kicker){font-size:16.5px;line-height:1.85;color:#5A4A3E;margin-top:16px}
+.insta{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-weight:700;color:var(--brown);border-bottom:1.5px solid currentColor;padding-bottom:3px}
+
+.visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:stretch;max-width:1200px;margin:0 auto;padding:90px 6vw;border-top:1px solid var(--line)}
+.addr{font-size:18px;font-weight:700;margin-top:18px}
+.visit ul{list-style:none;margin-top:18px;display:grid;gap:10px;font-size:15.5px;color:#5A4A3E}
+.visit li b{display:inline-block;width:52px;color:var(--ink)}
+.map{border-radius:20px;overflow:hidden;min-height:340px;background:var(--cream-2)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0}
+
+.foot{background:var(--ink);color:var(--cream);text-align:center;padding:48px 6vw 56px;display:grid;gap:8px;font-size:14px}
+.foot .logo{font-size:22px;margin-bottom:6px}
+.foot .logo b{color:#D9A877}
+.foot .small{font-size:12px;opacity:.55}
+
+.dock{display:none}
+
+@media(max-width:760px){
+  .top nav{display:none}
+  .hero{grid-template-columns:1fr;padding:44px 22px 30px;gap:10px}
+  .hero-art{order:-1}
+  .hero-art svg{max-width:220px}
+  .lead{font-size:16px}
+  .info-bar{grid-template-columns:1fr;padding:0 22px}
+  .info-bar div + div{padding-left:0;border-top-width:1px}
+  .menu{padding:64px 22px}
+  .story,.visit{grid-template-columns:1fr;padding:56px 22px;gap:32px}
+  .story-art{grid-template-rows:130px 130px}
+  .foot{padding-bottom:110px}
+  .dock{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:8px;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;padding:8px;border-radius:18px;background:rgba(42,30,22,.94);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .dock a{text-align:center;padding:13px 0;border-radius:12px;color:var(--cream);font-weight:700;font-size:15px}
+  .dock a.primary{background:var(--cream);color:var(--ink)}
+}

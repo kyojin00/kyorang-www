@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ✏️ 가게 이름과 소개 문구를 바꾸세요. 검색·카톡 공유 미리보기에 쓰입니다. -->
+<title>온기커피 — 여수 바다 앞 작은 로스터리</title>
+<meta name="description" content="매일 아침 직접 볶는 원두로 내리는 커피와 구움과자. 여수 이순신광장에서 걸어서 3분.">
+<meta property="og:title" content="온기커피">
+<meta property="og:description" content="매일 아침 직접 볶는 원두로 내리는 커피와 구움과자.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="#">온기<b>커피</b></a>
+  <nav>
+    <a href="#menu">메뉴</a>
+    <a href="#story">이야기</a>
+    <a href="#visit">오시는 길</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="kicker">ONGI COFFEE · SINCE 2021</p>
+    <h1>바다 냄새 나는 동네에서<br>매일 아침 볶는 커피</h1>
+    <p class="lead">이순신광장에서 걸어서 3분. 창가 자리에 앉으면 돌산대교가 보여요.</p>
+    <div class="cta">
+      <a class="btn primary" href="#visit">오시는 길</a>
+      <!-- ✏️ 네이버 예약·캐치테이블 주소로 바꾸세요 -->
+      <a class="btn" href="https://booking.naver.com" target="_blank" rel="noopener">자리 예약</a>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 320 320">
+      <circle cx="160" cy="160" r="150" fill="var(--cream-2)"/>
+      <path d="M128 70c-10 14 10 22 0 36M160 62c-10 14 10 22 0 36M192 70c-10 14 10 22 0 36" stroke="var(--brown)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".45"/>
+      <path d="M82 128h156l-14 104a26 26 0 0 1-26 22h-76a26 26 0 0 1-26-22z" fill="var(--brown)"/>
+      <path d="M238 146h14a26 26 0 0 1 0 52h-20" stroke="var(--brown)" stroke-width="14" fill="none"/>
+      <ellipse cx="160" cy="128" rx="78" ry="12" fill="var(--brown-deep)"/>
+      <ellipse cx="160" cy="268" rx="96" ry="10" fill="var(--brown)" opacity=".18"/>
+      <path d="M128 176c18 14 46 14 64 0" stroke="var(--cream)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".6"/>
+    </svg>
+  </div>
+</section>
+
+<section class="info-bar">
+  <div><span>영업시간</span><b>매일 10:00 – 21:00</b></div>
+  <div><span>휴무</span><b>매주 화요일</b></div>
+  <div><span>전화</span><b><a href="tel:061-000-0000">061-000-0000</a></b></div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="head">
+    <p class="kicker">MENU</p>
+    <h2>오늘의 메뉴</h2>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="on" data-tab="coffee">커피</button>
+    <button data-tab="drink">음료</button>
+    <button data-tab="bake">구움과자</button>
+  </div>
+  <!-- ✏️ 메뉴는 <li> 한 줄이 한 품목입니다. 복사해서 늘리세요. -->
+  <ul class="menu-list on" data-panel="coffee">
+    <li><div><b>아메리카노</b><span>오늘 볶은 원두 · 산미 적은 블렌드</span></div><em>4,500</em></li>
+    <li><div><b>카페라떼</b><span>고소한 우유와 진한 에스프레소</span></div><em>5,000</em></li>
+    <li class="best"><div><b>바다 크림라떼</b><span>소금 크림을 올린 대표 메뉴</span></div><em>6,000</em></li>
+    <li><div><b>핸드드립</b><span>그날의 싱글 오리진 (직원에게 물어보세요)</span></div><em>6,500</em></li>
+  </ul>
+  <ul class="menu-list" data-panel="drink">
+    <li><div><b>유자 에이드</b><span>남해 유자청을 직접 담가요</span></div><em>5,500</em></li>
+    <li><div><b>말차 라떼</b><span>쌉싸름한 제주 말차</span></div><em>5,500</em></li>
+    <li><div><b>밀크티</b><span>얼그레이를 오래 우려낸 진한 맛</span></div><em>5,500</em></li>
+  </ul>
+  <ul class="menu-list" data-panel="bake">
+    <li class="best"><div><b>휘낭시에</b><span>태운 버터로 굽는 매일 한정 수량</span></div><em>3,000</em></li>
+    <li><div><b>바스크 치즈케이크</b><span>겉은 진하게, 속은 부드럽게</span></div><em>6,500</em></li>
+    <li><div><b>스콘</b><span>플레인 · 얼그레이 · 무화과</span></div><em>3,500</em></li>
+  </ul>
+</section>
+
+<section class="story" id="story">
+  <div class="story-art" aria-hidden="true">
+    <div class="tile t1"><span>로스팅</span></div>
+    <div class="tile t2"><span>창가 자리</span></div>
+    <div class="tile t3"><span>휘낭시에</span></div>
+  </div>
+  <div class="story-text">
+    <p class="kicker">STORY</p>
+    <h2>작게, 오래 하고 싶어서</h2>
+    <p>여덟 평 작은 가게에서 하루 3kg만 볶아요. 많이 볶지 않으니 늘 신선하고, 손님 얼굴을 기억할 수 있어요.</p>
+    <p>원두는 매장에서 200g씩 소분해 팔고 있어요. 집에서도 같은 맛을 내는 방법을 물어보시면 알려드려요.</p>
+    <!-- ✏️ 인스타그램 주소로 바꾸세요 -->
+    <a class="insta" href="https://instagram.com" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+      @ongi.coffee 에서 오늘 메뉴 보기
+    </a>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="visit-text">
+    <p class="kicker">VISIT</p>
+    <h2>오시는 길</h2>
+    <!-- ✏️ 주소를 바꾸고, 아래 지도 iframe 의 q= 뒤 주소도 똑같이 바꾸세요 -->
+    <p class="addr">전남 여수시 중앙동 이순신광장로 00, 1층</p>
+    <ul>
+      <li><b>걸어서</b> 이순신광장에서 3분</li>
+      <li><b>주차</b> 광장 공영주차장 이용 (1시간 지원)</li>
+      <li><b>단체</b> 8명 이상은 하루 전 전화 주세요</li>
+    </ul>
+    <div class="cta">
+      <a class="btn primary" href="https://map.naver.com/p/search/이순신광장" target="_blank" rel="noopener">네이버 지도</a>
+      <a class="btn" href="https://map.kakao.com/?q=이순신광장" target="_blank" rel="noopener">카카오맵</a>
+    </div>
+  </div>
+  <div class="map">
+    <iframe title="지도" loading="lazy" src="https://www.google.com/maps?q=%EC%97%AC%EC%88%98%20%EC%9D%B4%EC%88%9C%EC%8B%A0%EA%B4%91%EC%9E%A5&output=embed"></iframe>
+  </div>
+</section>
+
+<footer class="foot">
+  <p class="logo">온기<b>커피</b></p>
+  <p>전남 여수시 중앙동 이순신광장로 00 · 061-000-0000</p>
+  <p class="small">사업자등록번호 000-00-00000 · 대표 홍길동</p>
+</footer>
+
+<!-- 휴대폰에서만 보이는 하단 고정 버튼 -->
+<div class="dock">
+  <a href="tel:061-000-0000">전화</a>
+  <a href="https://map.naver.com/p/search/이순신광장" target="_blank" rel="noopener">길찾기</a>
+  <a class="primary" href="https://booking.naver.com" target="_blank" rel="noopener">예약</a>
+</div>
+
+<script>
+  // 메뉴 탭 전환
+  document.querySelectorAll('.tabs button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.tabs button, .menu-list').forEach(function (el) { el.classList.remove('on') })
+      btn.classList.add('on')
+      document.querySelector('[data-panel="' + btn.dataset.tab + '"]').classList.add('on')
+    })
+  })
+</script>
+</body>
+</html>

@@ -1,8 +1,14 @@
 import Link from 'next/link'
 import { won, type Template } from '@/data/studio'
 
-// 실제 스크린샷이 생기기 전까지는 색만 다른 와이어프레임으로 미리보기를 그린다.
+// 데모 스크린샷이 있으면 그걸, 없으면 색만 다른 와이어프레임으로 미리보기를 그린다.
 export function TemplateThumb({ t }: { t: Template }) {
+  if (t.thumb)
+    return (
+      <div className="tpl-thumb shot" style={{ background: t.color }}>
+        <img src={t.thumb} alt={`${t.name} 템플릿 미리보기`} loading="lazy" />
+      </div>
+    )
   return (
     <div
       className="tpl-thumb"

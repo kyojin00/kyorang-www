@@ -1,0 +1,138 @@
+/* ✏️ 회사 색: --brand 한 줄만 바꾸면 버튼·포인트 색이 모두 바뀌어요 */
+:root{
+  --brand:#1E4E8C;
+  --brand-soft:#E8EFF8;
+  --gold:#C9A45C;
+  --ink:#17202B;
+  --text:#3A4452;
+  --muted:#748094;
+  --line:#E2E6EC;
+  --bg:#FFFFFF;
+  --bg-2:#F5F7FA;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Pretendard',-apple-system,sans-serif;color:var(--text);background:var(--bg);letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* 상단 메뉴 */
+#header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.logo i{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--brand),#4C86D1)}
+.logo small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--muted)}
+.menu{display:flex;gap:34px;font-size:15.5px;font-weight:600}
+.menu a{color:var(--text);padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a.on{color:var(--brand);border-color:var(--brand)}
+.burger{display:none;background:none;border:none;width:40px;height:40px;flex-direction:column;justify-content:center;gap:5px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);border-radius:2px}
+
+/* 공통 */
+.kicker{font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--brand)}
+h1,h2,h3{color:var(--ink);letter-spacing:-.03em}
+.sec{padding:96px 0}
+.sec.gray{background:var(--bg-2)}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(26px,3.6vw,38px);font-weight:800;margin-top:10px;line-height:1.3}
+.sec-head p{font-size:16.5px;line-height:1.8;color:var(--muted);margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:8px;font-weight:700;font-size:15.5px;background:var(--brand);color:#fff;border:1.5px solid var(--brand)}
+.btn.line{background:none;color:var(--ink);border-color:var(--line)}
+.btn:hover{filter:brightness(1.08)}
+
+/* 메인 */
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#0F2747 0%,#1E4E8C 60%,#2C6CB8 100%);color:#fff;padding:140px 0 120px}
+.hero::after{content:'';position:absolute;right:-120px;top:-80px;width:620px;height:620px;border-radius:50%;border:80px solid rgba(255,255,255,.05)}
+.hero .kicker{color:var(--gold)}
+.hero h1{color:#fff;font-size:clamp(36px,5.6vw,64px);font-weight:800;line-height:1.18;margin:18px 0 22px}
+.hero p{font-size:18px;line-height:1.75;color:rgba(255,255,255,.75);max-width:560px}
+.hero .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px}
+.hero .btn{background:#fff;color:var(--brand);border-color:#fff}
+.hero .btn.line{background:none;color:#fff;border-color:rgba(255,255,255,.4)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;background:#fff;margin-top:-56px;position:relative;z-index:2;box-shadow:0 20px 40px rgba(23,32,43,.08)}
+.stats div{padding:28px 26px}
+.stats div + div{border-left:1px solid var(--line)}
+.stats b{display:block;font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-.03em}
+.stats span{font-size:14px;color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px 28px;transition:.25s}
+.card:hover{border-color:var(--brand);transform:translateY(-3px)}
+.card .ic{width:48px;height:48px;border-radius:12px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;margin-bottom:22px}
+.card h3{font-size:19px;font-weight:800;margin-bottom:10px}
+.card p{font-size:15px;line-height:1.75;color:var(--muted)}
+
+.notice-mini{border-top:2px solid var(--ink)}
+.notice-mini a{display:flex;justify-content:space-between;gap:20px;padding:20px 4px;border-bottom:1px solid var(--line);font-size:16px}
+.notice-mini a:hover b{color:var(--brand)}
+.notice-mini span{color:var(--muted);font-size:14px;white-space:nowrap}
+
+.cta-band{background:var(--ink);color:#fff;border-radius:18px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.cta-band h2{color:#fff;font-size:28px;font-weight:800}
+.cta-band p{color:rgba(255,255,255,.6);margin-top:8px;font-size:16px}
+
+/* 하위 페이지 머리 */
+.page-head{background:var(--bg-2);border-bottom:1px solid var(--line);padding:80px 0 56px}
+.page-head h1{font-size:clamp(30px,4.4vw,44px);font-weight:800;margin-top:10px}
+.page-head p{font-size:17px;color:var(--muted);margin-top:12px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.photo{border-radius:16px;min-height:340px;background:linear-gradient(135deg,#C8D6E8,#7E9CC3 55%,#3C5F8E)}
+.prose p{font-size:16.5px;line-height:1.9;margin-bottom:16px}
+.timeline{list-style:none;border-left:2px solid var(--line);margin-left:6px}
+.timeline li{position:relative;padding:0 0 26px 28px}
+.timeline li::before{content:'';position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand)}
+.timeline b{display:block;color:var(--ink);font-size:17px}
+.timeline span{font-size:15px;color:var(--muted)}
+
+/* 공지 */
+.notices{border-top:2px solid var(--ink)}
+.notices details{border-bottom:1px solid var(--line)}
+.notices summary{list-style:none;display:flex;justify-content:space-between;gap:20px;padding:22px 4px;cursor:pointer;font-size:16.5px;font-weight:600;color:var(--ink)}
+.notices summary::-webkit-details-marker{display:none}
+.notices summary span{font-weight:400;color:var(--muted);font-size:14px;white-space:nowrap}
+.notices .tag{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--brand);border-radius:4px;padding:2px 7px;margin-right:8px;vertical-align:2px}
+.notices .body{padding:4px 4px 26px;font-size:15.5px;line-height:1.85;color:var(--text)}
+
+/* 문의 */
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.info-list{list-style:none;display:grid;gap:22px}
+.info-list span{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:4px}
+.info-list b{font-size:17px;color:var(--ink)}
+.form{display:grid;gap:16px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form label{display:grid;gap:7px;font-size:14px;font-weight:700;color:var(--ink)}
+.form input,.form select,.form textarea{font:inherit;font-size:15.5px;padding:13px 15px;border:1.5px solid var(--line);border-radius:8px;outline:none;color:var(--ink);background:#fff}
+.form input:focus,.form textarea:focus,.form select:focus{border-color:var(--brand)}
+.agree{display:flex !important;grid-template-columns:none;align-items:center;gap:8px;font-weight:500 !important;color:var(--muted) !important}
+.form .btn{justify-self:start;border:none;cursor:pointer;font:inherit;font-weight:700}
+
+/* 약관 */
+.legal{max-width:820px}
+.legal h2{font-size:19px;font-weight:800;margin:36px 0 10px}
+.legal p,.legal li{font-size:15px;line-height:1.85}
+.legal ul{padding-left:20px}
+
+/* 하단 */
+#footer{background:#0F1620;color:rgba(255,255,255,.55);padding:56px 0;font-size:14px;line-height:1.9}
+.f-name{color:#fff;font-size:19px;font-weight:800;margin-bottom:12px}
+.f-links{display:flex;gap:18px;margin-top:14px}
+.f-links b{color:#fff}
+.f-copy{font-size:12.5px;margin-top:10px;opacity:.6}
+
+@media(max-width:860px){
+  .menu{display:none;position:absolute;left:0;right:0;top:72px;background:#fff;flex-direction:column;gap:0;padding:8px 28px 18px;border-bottom:1px solid var(--line)}
+  #header.open .menu{display:flex}
+  .menu a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .burger{display:flex}
+  .hero{padding:96px 0 100px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div:nth-child(3){border-left:none}
+  .stats div:nth-child(n+3){border-top:1px solid var(--line)}
+  .cards,.split,.contact-grid{grid-template-columns:1fr}
+  .sec{padding:68px 0}
+  .cta-band{padding:36px 26px}
+  .form .row{grid-template-columns:1fr}
+  .photo{min-height:220px}
+}
+@media(max-width:480px){.wrap{padding:0 20px}.stats b{font-size:26px}}
